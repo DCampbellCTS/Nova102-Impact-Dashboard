@@ -279,7 +279,7 @@
   </div>
   <div class="meta">
     <span class="rev-pill">Pushed by Automated daily update</span>
-    <span>Compiled <span class="mono">2026-09-11 08:50 CDT</span></span>
+    <span>Compiled <span class="mono">2026-09-11 14:14 CDT</span></span>
     <span>Punch list checked <span class="mono">09-10 11:00 CDT</span></span>
   </div>
 </div>
@@ -292,18 +292,18 @@
   <div class="kpis">
     <div class="kpi">
       <div class="label">Conduits Tracked</div>
-      <div class="value mono">48,651</div>
-      <div class="foot">7 UG worksets, as of 8:39 AM pull</div>
+      <div class="value mono">48,755</div>
+      <div class="foot">7 UG worksets, as of 2:10 PM pull (2 pulls today)</div>
     </div>
     <div class="kpi">
       <div class="label">Added Today</div>
-      <div class="value good mono">+740</div>
-      <div class="foot">single pull, 8:39 AM</div>
+      <div class="value good mono">+897</div>
+      <div class="foot">2 pulls summed, 8:39 AM + 2:10 PM</div>
     </div>
     <div class="kpi">
       <div class="label">Deleted Today</div>
-      <div class="value crit mono">&minus;513</div>
-      <div class="foot">redrawn / rerouted</div>
+      <div class="value crit mono">&minus;566</div>
+      <div class="foot">redrawn / rerouted, 2 pulls summed</div>
     </div>
     <div class="kpi">
       <div class="label">Reworksetted</div>
@@ -312,8 +312,8 @@
     </div>
     <div class="kpi">
       <div class="label">WP Rows Touched</div>
-      <div class="value mono">53</div>
-      <div class="foot">Register N/O/S updates, incl. NOT&#8209;USE miscount fix on UGC.MY.M5</div>
+      <div class="value mono">58</div>
+      <div class="foot">+5 this afternoon (M1/M3/O1/O2/K4 revision refresh); incl. NOT&#8209;USE miscount fix on UGC.MY.M5</div>
     </div>
     <div class="kpi">
       <div class="label">Open Punch Items</div>
@@ -326,7 +326,7 @@
 <section>
   <div class="section-head">
     <h2>Daily Model Churn</h2>
-    <div class="section-note">Elements added / deleted per pull, Category = Conduits. 6 tracked worksets through 09&#8209;09; 7 from 09&#8209;10 on (05&#8209;ELECTRICAL EQUIPMENT added). Reworksetted elements (type or workset reassignment) shown as a line. 09&#8209;03 and 09&#8209;04 span several days each; a strict daily cadence started 09&#8209;08. 09&#8209;10 was two pulls summed into one day; 09&#8209;11 is a single pull (see History below).</div>
+    <div class="section-note">Elements added / deleted per pull, Category = Conduits. 6 tracked worksets through 09&#8209;09; 7 from 09&#8209;10 on (05&#8209;ELECTRICAL EQUIPMENT added). Reworksetted elements (type or workset reassignment) shown as a line. 09&#8209;03 and 09&#8209;04 span several days each; a strict daily cadence started 09&#8209;08. 09&#8209;10 and 09&#8209;11 were each two pulls summed into one day (see History below).</div>
   </div>
   <div class="panel chart-panel">
     <div class="chart-legend">
@@ -380,11 +380,11 @@
           <text class="bar-label" x="700" y="270" text-anchor="middle" fill="var(--ink-3)">today, 2 pulls</text>
         </g>
         <g>
-          <rect x="790" y="173.1" width="30" height="16.9" fill="var(--good)" rx="2"/>
-          <rect x="790" y="190" width="30" height="11.7" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="805" y="168.1" text-anchor="middle">740</text>
+          <rect x="790" y="169.5" width="30" height="20.5" fill="var(--good)" rx="2"/>
+          <rect x="790" y="190" width="30" height="12.9" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="805" y="164.5" text-anchor="middle">897</text>
           <text class="day-label" x="840" y="256" text-anchor="middle">09&#8209;11</text>
-          <text class="bar-label" x="840" y="270" text-anchor="middle" fill="var(--ink-3)">today</text>
+          <text class="bar-label" x="840" y="270" text-anchor="middle" fill="var(--ink-3)">today, 2 pulls</text>
         </g>
         <polyline points="105,187 245,187.5 385,184.7 525,189.4 665,187.7 805,189.1" fill="none" stroke="var(--accent)" stroke-width="2"/>
         <circle cx="105" cy="187" r="3" fill="var(--accent)"/>
@@ -523,6 +523,7 @@
           <tr><td class="tbl-note">WP Register C2 O1/O2/P1/P2</td><td>Dead placeholder rows (316&#8211;319) &mdash; PDF confirms no O/P UGC subareas exist in COLO2; repurpose or delete pending</td></tr>
           <tr><td class="tbl-note">TP separate&#8209;file scope</td><td>Legend cites a separate temp&#8209;power .rvt; main model also has real TRP.* sheets &mdash; authoritative source unconfirmed</td></tr>
           <tr><td class="tbl-note">Areas 2&#8211;4 draft rows</td><td>Zero&#8209;sheet placeholders, expected until real design starts there &mdash; not a problem, just standing</td></tr>
+          <tr><td class="tbl-note">Revit Daily Change Log corrupted (09&#8209;11)</td><td>The log file this page draws its History from was found reduced to a placeholder string, losing prior dated entries &mdash; isolated to that one file, flagged to David, not reconstructed</td></tr>
         </tbody>
       </table>
     </div>
@@ -586,6 +587,7 @@
         <tr><td class="date">09-10, latest</td><td class="desc">David confirmed the Netlify site is live and asked for two changes: (1) bring 05-ELECTRICAL EQUIPMENT permanently into tracked scope, since everything in the model is in the team's scope &mdash; done, the scheduled task and this log now track 7 worksets; (2) surface the fuller project history of flags, placeholders and data gaps on this page, not just the latest day's numbers &mdash; done, added the Open Items &amp; Flags section above consolidating the FROM/TO completeness scan, active placeholders, structural Register gaps, and model data-quality flags raised across every prior entry in this History.</td></tr>
         <tr><td class="date">09-11</td><td class="desc">Automated weekday run: +740 / &minus;513 / 39 reworksetted (~1.6% of 48,651 conduits touched) &mdash; quiet day. WP Register: 53 rows' N/O/S updated; Colo2 UGC I4/I5/K3 drafted today (13 of 14 subareas now drafted, only K4 left), IFR dates pinned on the tracker. Corrected a Sheets&#8209;Found miscount on UGC.MY.M5 (6&rarr;4, NOT&#8209;USE duplicates were being counted). New Register gaps found: UGC.MY.G4 and UGC.MY.C4/C5/C6 (unrecognized Phase&#8209;MY subareas), plus a non&#8209;standard UGC.EYP3.001 sheet number.</td></tr>
         <tr><td class="date">09-11, later</td><td class="desc">David asked to locate ARCO's site-location PDF and the Colo1/Colo2 key-plan PDFs from recent sessions and use them to resolve today's gap findings. Found "Nova LOCATION for BIM.pdf" (site-wide Colo/Elec-Yard/Mech-Yard layout) and "COLO1.UG.POWER - IFC.pdf" (Desktop) &mdash; the latter turned out to contain all four COLOs' key-plan sheets (UGC.AD/C1/EY/MY.00, UGC.EY/C2/MY.00, UGC.EY/C3/MY.00, UGC.EY/C4/MY.00), not just Colo1's. Confirmed Colo3's Mech Yard (MY3) uses E1-E6/G1-G8 and Colo4's (MY4) uses A1-A6/C1-C8 &mdash; resolving this morning's "UGC.MY.G4"/"UGC.MY.C4/C5/C6" gaps as real Colo3/Colo4 Mech Yard subareas, not data errors. Relabeled 4 existing placeholder WP Register rows in place (Phase corrected to real "MY", SubArea to G4/C4/C5/C6) and added matching Nova102-Tracker groups (C3-UG-MY3, C4-UG-MY4). The fuller Colo3/Colo4 key-plan findings (full 14-subarea main-zone layouts, Elec Yard letter sets) were recorded in the WP schedule reference doc for future use; the PDFs' locations were added to the daily scheduled task's own instructions so it can draw on them going forward.</td></tr>
+        <tr><td class="date">09-11, ~2:10 PM</td><td class="desc">Second pull of the day, requested by David after further model changes. Idempotency check found the morning's steps 1-6 already complete (WP Register gap corrections, tracker + dashboard pushes) and, separately, found this page's own source document &mdash; the Revit Daily Change Log &mdash; had been overwritten down to a placeholder string with no historical entries, isolated to that one file; flagged to David, not reconstructed from paraphrased references elsewhere. Re-ran the full pipeline at David's request: diff vs. 8:39 AM pull was +157 / &minus;53 / 0 modified (day total now +897 / &minus;566 / 39 reworksetted). WP Register: 5 more rows' N/O/S refreshed (UGC.MY.M1/M3/O1/O2, UGC.C2.K4) &mdash; mostly real sheets advancing from drafted to issued-for-review/IFC today; UGC.MY.O1 dropped from 2 matched sheets to 1 after one superseded sheet was marked (NOT USE). Model health re-checked: 467,344 total elements (+15,839 vs. 09-08), warnings down to 674 (from 1,056), 246 sheets (+24). No new unexplained WP Register gaps found; the 46 live sheets still unmatched to any WPID all fall under already-standing categories (TRP/TP file ambiguity, PREFAB detail sheets, GRD zone-rollup sheets, T1/S1 pending categorization).</td></tr>
       </tbody>
     </table>
   </div>
