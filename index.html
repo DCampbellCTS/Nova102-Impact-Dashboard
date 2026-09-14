@@ -506,6 +506,17 @@
   </div>
   <div class="flags-grid">
     <div class="panel flag-panel">
+      <h3 class="flag-h">Temp Power Model Snapshot (first-ever query, 09-14)</h3>
+      <div class="section-note" style="margin-bottom:10px;">NOVA102-TEMP-POWER-UG-TRI.rvt -- 219,081 elements, health score "Needs attention" (658 warnings, 21,342 purgeable). Workset breakdown: 09-DELETE 53,846 elems (14,501 WORK PACKAGE-tagged, 27%) / 04-OVERHEAD CONDUITS 14,520 elems (0% tagged) / 03-UG CONDUITS 9,888 elems (0% tagged, mostly grids/legend refs -- 3,775 real conduits) / 07-GROUNDING 1,190 (0% tagged) / 06-TELECOM 480 (0% tagged) / 05-SOG CONDUITS 5 elems (essentially unmodeled) / 08-POINTS empty.</div>
+      <table class="mini-table">
+        <tbody>
+          <tr><td class="tbl-note">OPEN FLAG -- WP tagging location</td><td>All 14,501 WORK PACKAGE-tagged elements sit in the "09-DELETE" workset (named for deletion), spanning real EY1/MY1 zone codes (N1, P5, M4, O4, O5) with meaningful FROM/TO equipment refs (e.g. ICM-EY1-8&rarr;ICM-EY1-9, UDP-MY1-4-1&rarr;PCWP-116). The worksets that look active by name -- 03-UG CONDUITS, 04-OVERHEAD CONDUITS, 06-TELECOM, 07-GROUNDING -- carry zero WP tags. Not yet resolved whether 09-DELETE is genuinely superseded content or misplaced/at-risk real design -- needs BES/David judgment, not assumed either way.</td></tr>
+          <tr><td class="tbl-note">Broken CAD link</td><td>TEMPELEC_08252025.dwg (transformer request reference, dated 09-09) load_state = NotFound -- path on a OneDrive folder that no longer resolves. Worth restoring if this file is used for transformer coordination.</td></tr>
+          <tr><td class="tbl-note">Zone family observed</td><td>All WP-tagged Temp Power content maps to COLO1 EY1/MY1 sub-areas (tracker groups C1-UG-EY, C1-UG-MY) -- no C2/C3/C4 zone codes found in tagged data.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel flag-panel">
       <h3 class="flag-h">AG Model Snapshot (first-ever query, 09-14)</h3>
       <div class="section-note" style="margin-bottom:10px;">NOVA102-AG-OVERALL-TRI.rvt -- a separate Revit file from the UG-OVERALL model tracked elsewhere on this dashboard. Never previously queried.</div>
       <table>
