@@ -525,13 +525,14 @@
       </table>
     </div>
     <div class="panel flag-panel">
-      <h3 class="flag-h">Temp Power Model Snapshot (first-ever query, 09-14)</h3>
+      <h3 class="flag-h">Temp Power Model Snapshot (refreshed 09-15, first queried 09-14)</h3>
       <div class="section-note" style="margin-bottom:10px;">NOVA102-TEMP-POWER-UG-TRI.rvt -- 219,081 elements, health score "Needs attention" (658 warnings, 21,342 purgeable). Workset breakdown: 09-DELETE 53,846 elems (14,501 WORK PACKAGE-tagged, 27%) / 04-OVERHEAD CONDUITS 14,520 elems (0% tagged) / 03-UG CONDUITS 9,888 elems (0% tagged, mostly grids/legend refs -- 3,775 real conduits) / 07-GROUNDING 1,190 (0% tagged) / 06-TELECOM 480 (0% tagged) / 05-SOG CONDUITS 5 elems (essentially unmodeled) / 08-POINTS empty.</div>
       <table class="mini-table">
         <tbody>
           <tr><td class="tbl-note">RESOLVED -- WP tagging location (09-14, David confirmed)</td><td>All 14,501 WORK PACKAGE-tagged elements found in the "09-DELETE" workset are CONFIRMED SAFE TO IGNORE -- David reviewed this finding directly and confirmed it. Old/superseded content, not at-risk real design. Temp Power zone tagging in the active worksets (03-UG CONDUITS/04-OVERHEAD CONDUITS) remains at 0% until BES tags them directly -- do not use 09-DELETE data for Temp Power % Design Complete going forward.</td></tr>
           <tr><td class="tbl-note">Broken CAD link</td><td>TEMPELEC_08252025.dwg (transformer request reference, dated 09-09) load_state = NotFound -- path on a OneDrive folder that no longer resolves. Worth restoring if this file is used for transformer coordination.</td></tr>
           <tr><td class="tbl-note">Zone family observed</td><td>All WP-tagged Temp Power content maps to COLO1 EY1/MY1 sub-areas (tracker groups C1-UG-EY, C1-UG-MY) -- no C2/C3/C4 zone codes found in tagged data.</td></tr>
+          <tr><td class="tbl-note">RESOLVED 09-15 -- TP/TRP sheet-authority conflict</td><td>This file's own sheet list finally checked: exactly 7 sheets (START VIEW + 4 overview sheets 0.1-0.4 + 2 single-line diagrams E100-TP/E101-TP), none issued, none using TRP.* numbering. Confirms the main UG-OVERALL model's live TRP.* sheets are the sole real source for TP work-package sheet matching (15 of 158 TP Register rows already match one there) -- this file's own % Design Complete stays tag-based since it has no per-subzone sheets. Model otherwise unchanged since 09-14 (byte-for-byte identical element/workset counts).</td></tr>
         </tbody>
       </table>
     </div>
