@@ -279,7 +279,7 @@
   </div>
   <div class="meta">
     <span class="rev-pill">Pushed by Automated daily update</span>
-    <span>Compiled <span class="mono">2026-09-16 17:15 CDT</span></span>
+    <span>Compiled <span class="mono">2026-09-16 18:45 CDT</span></span>
     <span>Punch list checked <span class="mono">09-10 11:00 CDT</span></span>
   </div>
 </div>
@@ -292,28 +292,28 @@
   <div class="kpis">
     <div class="kpi">
       <div class="label">Conduits Tracked</div>
-      <div class="value mono">48,947</div>
-      <div class="foot">7 UG worksets, as of 8:33 AM pull, 09&#8209;15</div>
+      <div class="value mono">49,223</div>
+      <div class="foot">7 UG worksets, as of 4:03 PM pull, 09&#8209;16</div>
     </div>
     <div class="kpi">
       <div class="label">Added Today</div>
-      <div class="value good mono">+376</div>
-      <div class="foot">since the 09&#8209;14 11:48 AM pull</div>
+      <div class="value good mono">+651</div>
+      <div class="foot">9:30 AM&rarr;4:03 PM pull, 09&#8209;16 (morning pull's own diff vs 09&#8209;15 wasn't saved &mdash; see History)</div>
     </div>
     <div class="kpi">
       <div class="label">Deleted Today</div>
-      <div class="value crit mono">&minus;318</div>
-      <div class="foot">redrawn / rerouted, since 09&#8209;14</div>
+      <div class="value crit mono">&minus;602</div>
+      <div class="foot">redrawn / rerouted, 9:30 AM&rarr;4:03 PM pull, 09&#8209;16</div>
     </div>
     <div class="kpi">
       <div class="label">Reworksetted</div>
-      <div class="value mono">42</div>
-      <div class="foot">same&#8209;ElementId workset reassignments this pull</div>
+      <div class="value mono">0</div>
+      <div class="foot">no workset reassignments this pull &mdash; 73 modified were tag/type changes instead (61 newly WP&#8209;tagged, 12 EMT&rarr;RNC reclassified)</div>
     </div>
     <div class="kpi">
       <div class="label">WP Rows Touched</div>
-      <div class="value mono">80</div>
-      <div class="foot">+11 today (C1.M1/N1/EY.N3 corrections, C3 H1/H2/F1/F2 2nd sheets, C2 I4/I5/K3/K4 IFR date re&#8209;applied)</div>
+      <div class="value mono">144</div>
+      <div class="foot">TP/TRP live matching's first run (35 rows, 2 reaching IFC: C1.P2, MY.O2) + 97 UGC / 8 TEL / 4 GRD refreshed</div>
     </div>
     <div class="kpi">
       <div class="label">Open Punch Items</div>
@@ -335,12 +335,12 @@
       <span><span class="swatch" style="background:var(--accent)"></span>Reworksetted (line)</span>
     </div>
     <div class="chart-wrap">
-      <svg class="chart" viewBox="0 0 1140 300" width="1140" height="300" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-15">
+      <svg class="chart" viewBox="0 0 1280 300" width="1280" height="300" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-16">
         <g>
-          <line class="gridline" x1="60" y1="30" x2="1100" y2="30"/>
-          <line class="gridline" x1="60" y1="110" x2="1100" y2="110"/>
-          <line class="zero-line" x1="60" y1="190" x2="1100" y2="190"/>
-          <line class="gridline" x1="60" y1="230" x2="1100" y2="230"/>
+          <line class="gridline" x1="60" y1="30" x2="1240" y2="30"/>
+          <line class="gridline" x1="60" y1="110" x2="1240" y2="110"/>
+          <line class="zero-line" x1="60" y1="190" x2="1240" y2="190"/>
+          <line class="gridline" x1="60" y1="230" x2="1240" y2="230"/>
           <text class="axis-label" x="52" y="34" text-anchor="end">7000</text>
           <text class="axis-label" x="52" y="114" text-anchor="end">3500</text>
           <text class="axis-label" x="52" y="194" text-anchor="end">0</text>
@@ -400,7 +400,14 @@
           <text class="day-label" x="1120" y="256" text-anchor="middle">09&#8209;15</text>
           <text class="bar-label" x="1120" y="270" text-anchor="middle" fill="var(--ink-3)">8266 WP&#8209;tags added (see flag)</text>
         </g>
-        <polyline points="105,187 245,187.5 385,184.7 525,189.4 665,187.7 805,189.1 945,189.3 1085,189.04" fill="none" stroke="var(--accent)" stroke-width="2"/>
+                <g>
+          <rect x="1210" y="175.1" width="30" height="14.9" fill="var(--good)" rx="2"/>
+          <rect x="1210" y="190" width="30" height="13.8" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="1225" y="170.1" text-anchor="middle">651</text>
+          <text class="day-label" x="1260" y="256" text-anchor="middle">09&#8209;16</text>
+          <text class="bar-label" x="1260" y="270" text-anchor="middle" fill="var(--ink-3)">afternoon pull only, see foot note</text>
+        </g>
+        <polyline points="105,187 245,187.5 385,184.7 525,189.4 665,187.7 805,189.1 945,189.3 1085,189.04 1225,190" fill="none" stroke="var(--accent)" stroke-width="2"/>
         <circle cx="105" cy="187" r="3" fill="var(--accent)"/>
         <circle cx="245" cy="187.5" r="3" fill="var(--accent)"/>
         <circle cx="385" cy="184.7" r="3" fill="var(--accent)"/>
@@ -409,6 +416,7 @@
         <circle cx="805" cy="189.1" r="3" fill="var(--accent)"/>
         <circle cx="945" cy="189.3" r="3" fill="var(--accent)"/>
         <circle cx="1085" cy="189.04" r="3" fill="var(--accent)"/>
+        <circle cx="1225" cy="190" r="3" fill="var(--accent)"/>
       </svg>
     </div>
   </div>
@@ -502,6 +510,7 @@
             <tr><td class="tbl-note">RFI&#8209;hold flag &mdash; needs David's call</td><td>COLO1 Mech Yard M1/O1/O2 all have their IFR PDF confirmed on file (09/11/2026) in the same folder, but the tracker still withholds their "in hand" (ifrRec) flag under the standing RFI 6.1 conduit&#8209;upsize hold from 09&#8209;11. Flagging whether that hold should still block "in hand" status now that the physical package is confirmed received.</td></tr>
             <tr><td class="tbl-note">Has this been done for all three models?</td><td><strong>No &mdash; UG only.</strong> This folder, like every direct AG/Temp Power query run this week, has nothing for the AG&#8209;Overall or Temp Power models: every AG subfolder here is empty, the AG model itself has zero COLO3 GRD/TRP/DB/ACG sheets or tags, and the Temp Power model still has only its 7 generic overview sheets, none per&#8209;subarea. Grounding, Temp Power, and Power(ACG) placeholder rows in the WP Register remain un&#8209;correctable until real evidence exists for those two models.</td></tr>
             <tr><td class="tbl-note">BES RFI folder connected &amp; logged</td><td>David connected a new <span class="mono">Project Files/BES RFI</span> folder and asked for these RFIs to be logged and tracked the same way as the others. Read all 34 PDFs (30 distinct BES&#8209;internal RFI numbers + 4 non&#8209;RFI ARCO/CM|MC design&#8209;coordination "Issue" markups) and logged full detail &mdash; Area/Cost/Schedule/Field impact, open vs. resolved status, schedule tie&#8209;in &mdash; into the 6&#8209;12 Week Lookahead workbook's "BES RFI Impact (Detail)" tab, extending it from 18 to 30 RFIs plus a new Issues section. Two new items land on Hard&#8209;Stop field activities: RFI 18 (generator pad/lug mismatch, still open) and RFI 30 (PTX&#8209;EY transformer NEC question, filed today). RFI 27 supersedes RFI 22 at higher severity. RFI 19/20 were already resolved by email; RFI 21 and Issue #4 confirm Telecom is out of BES's scope.</td></tr>
+            <tr><td class="tbl-note">Automated afternoon Revit refresh</td><td>The standing daily scheduled task ran against <span class="mono">NOVA102-UG-OVERALL-TRI.rvt</span> this afternoon (its morning attempt found the wrong model open and stopped without touching anything &mdash; see History). Fresh Conduits pull vs. this morning's 9:30&#8209;AM baseline: +651 / &minus;602 / 73 modified (61 newly WP&#8209;tagged, mostly COLO4 main&#8209;zone A2/C2 and a new COLO4 Elec&#8209;Yard subarea D3; 12 EMT&rarr;Rigid Nonmetallic reclassified; zero workset reassignments). WP Register: first-ever live run of the TP&#8209;&gt;TRP sheet matching (switched on 09&#8209;15) populated 35 TP rows, 2 reaching ISSUED FOR CONSTRUCTION (C1.P2, MY.O2); 97 UGC / 8 TEL / 4 GRD rows also refreshed. Model&#8209;health check skipped (last full check 09&#8209;14, only 2 days &mdash; not yet "a few days" per the standing cadence).</td></tr>
           </tbody>
         </table>
       </div>
@@ -700,6 +709,7 @@
         <tr><td class="date">09-11, ~2:10 PM</td><td class="desc">Second pull of the day, requested by David after further model changes. Idempotency check found the morning's steps 1-6 already complete (WP Register gap corrections, tracker + dashboard pushes) and, separately, found this page's own source document &mdash; the Revit Daily Change Log &mdash; had been overwritten down to a placeholder string with no historical entries, isolated to that one file; flagged to David, not reconstructed from paraphrased references elsewhere. Re-ran the full pipeline at David's request: diff vs. 8:39 AM pull was +157 / &minus;53 / 0 modified (day total now +897 / &minus;566 / 39 reworksetted). WP Register: 5 more rows' N/O/S refreshed (UGC.MY.M1/M3/O1/O2, UGC.C2.K4) &mdash; mostly real sheets advancing from drafted to issued-for-review/IFC today; UGC.MY.O1 dropped from 2 matched sheets to 1 after one superseded sheet was marked (NOT USE). Model health re-checked: 467,344 total elements (+15,839 vs. 09-08), warnings down to 674 (from 1,056), 246 sheets (+24). No new unexplained WP Register gaps found; the 46 live sheets still unmatched to any WPID all fall under already-standing categories (TRP/TP file ambiguity, PREFAB detail sheets, GRD zone-rollup sheets, T1/S1 pending categorization).</td></tr>
         <tr><td class="date">09-14</td><td class="desc">First automated weekday run since 09-11 (weekend gap). Diff vs. 09-11 2:10 PM pull: +847 / &minus;713 / 14 reworksetted (48,889 conduits tracked). Model health: 479,904 total elements (+12,560), warnings down to 597 (fourth consecutive decrease), 261 sheets (+15); a 14th link appeared (01&#8209;LINKS workset jumped 12&rarr;402), flagged for confirmation. WP Register: 11 rows' N/O/S refreshed &mdash; Colo2 I4/I5/K3/K4 reissued ("IFR AS PER PROJECT UPDATES"), Colo3 H1/H2/F1/F2 each picked up a second sheet, C1.M1/N1 split sheets got fresh dates, and a stale UGC.EY.N3 sheet-number reference was corrected. No new unexplained Register gaps &mdash; all 87 unmatched live sheets fall under already-standing categories (overview/key-plan sheets, PFB, TP/TRP, TEL gridline ambiguity, T1 open item, Colo3/Colo4 subarea gaps per the schedule reference doc &sect;7). Tracker updated (COLO2 I4/I5/K3/K4 reissue dates); this dashboard's Open Items &amp; Flags left unchanged &mdash; nothing new or resolved this pass.</td></tr>
         <tr><td class="date">09-15, midday</td><td class="desc">David asked for a review of the ACC <span class="mono">IFC Work Packages</span> and <span class="mono">IFF Work Packages</span> folders. IFC folder unchanged since 09-11 (combined COLO/Admin power &amp; tele packages). IFF folder held 8 new fabrication PDFs, all filed 09-15 ~10:28 AM, all COLO2 &mdash; a real, official ACC review (#28) is now open on them, due 09-18. Separately, an ACC Review Report (uploaded by David) showed Review #27 ("COLO1 UG IFR") closed today at 12:21 PM &mdash; ARCO (Justin Arbour) approved C1.M1, C1.N1, and EY.N3. Cross-referencing live Revit sheet data also surfaced 10 COLO2 Mech Yard (MY2) subareas (I1, I3&ndash;I6, K4&ndash;K8) that have had real drafted sheets since 09-10 but were never pinned on the tracker &mdash; backfilled. Nova102-Tracker updated and pushed; the Coordination Schedule's WP Register N/O/S/Q writes for these findings are queued pending the live Excel file (open in David's Excel, title showing "Repaired") being closed.</td></tr>
+        <tr><td class="date">09-16, afternoon</td><td class="desc">Morning run of the standing scheduled task found <span class="mono">NOVA102-TEMP-POWER-UG-TRI.rvt</span> open instead of the UG-Overall model and stopped at the file check without touching anything (logged, not repeated here). Once the correct model was confirmed open, the automation ran cleanly: diff vs. this morning's 9:30&#8209;AM baseline +651 / &minus;602 / 73 modified, zero reworksetted (49,223 conduits tracked). WP Register: first live run of the TP&rarr;TRP sheet match (35 rows, 2 reaching IFC &mdash; C1.P2, MY.O2) plus 97 UGC / 8 TEL / 4 GRD refreshed; a bug that had let the pass overwrite 16 section&#8209;header rollup rows (COUNTIF/COUNTA formulas) with literal zeros, and one that double&#8209;counted (NOT USE) superseded sheets, were both caught and fixed before the file was left in its final state. Model&#8209;health check skipped (last full check only 2 days ago, 09&#8209;14). Nova102&#8209;Tracker and this dashboard updated and pushed to match.</td></tr>
       </tbody>
     </table>
   </div>
