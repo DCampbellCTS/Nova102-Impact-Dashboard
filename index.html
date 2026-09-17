@@ -285,7 +285,7 @@
 </div>
 
 <div class="v1-flag">
-  <strong>About this page.</strong> Built from the Revit Daily Change Log and cross-checked against the live model &mdash; a Category=Conduits export plus the model's own "CND - CONDUIT SCHEDULE" (2,434 rows). All 7 field punch items below have been checked. Tracked scope is now all 7 UG worksets (05&#8209;ELECTRICAL EQUIPMENT added 09&#8209;10 &mdash; everything in the model is in scope, not just the original 6). See <strong>Open Items &amp; Flags</strong> below for every placeholder, data gap and flag raised on this project to date, and <strong>History</strong> for the day-by-day record. Live on Netlify as of 09-17.
+  <strong>About this page.</strong> Built from the Revit Daily Change Log and cross-checked against the live model &mdash; a Category=Conduits export plus the model's own "CND - CONDUIT SCHEDULE" (2,434 rows). All 7 field punch items below have been checked. Tracked scope is now all 7 UG worksets (05&#8209;ELECTRICAL EQUIPMENT added 09&#8209;10 &mdash; everything in the model is in scope, not just the original 6). See <strong>Open Items &amp; Flags</strong> below for every placeholder, data gap and flag raised on this project to date, and <strong>History</strong> for the day-by-day record. Live on Netlify as of 09-17 (2nd pass, scope repair).
 </div>
 
 <section>
@@ -312,8 +312,8 @@
     </div>
     <div class="kpi">
       <div class="label">WP Rows Touched</div>
-      <div class="value mono">48</div>
-      <div class="foot">2 reached Tier 0.5 for the first time (COLO3 E4/E5); 29 corrected for Copy/split&#8209;sheet double&#8209;counting (Tier unchanged &mdash; a matching&#8209;logic fix, see History); 17 O&#8209;text reformatted only</div>
+      <div class="value mono">1,399</div>
+      <div class="foot">scope repair, 2nd pass 09&#8209;17: 1,158 placeholder rows re&#8209;pointed to their real key&#8209;plan sub area, 70 re&#8209;labelled onto the location phase, 171 retired. All 6 UG work types now carry exactly 147 packages. Morning pull separately touched 48.</div>
     </div>
     <div class="kpi">
       <div class="label">Open Punch Items</div>
@@ -647,9 +647,9 @@
       <table>
         <tbody>
           <tr><td class="tbl-note">C2&#8209;UG&#8209;MV (tracker)</td><td>BES commitment, zone "MV" / sheet TBC &mdash; no real sheet yet, IFR pinned 09/09</td></tr>
-          <tr><td class="tbl-note">WP Register C2 O1/O2/P1/P2</td><td>Dead placeholder rows (316&#8211;319) &mdash; PDF confirms no O/P UGC subareas exist in COLO2; repurpose or delete pending</td></tr>
-          <tr><td class="tbl-note">TP separate&#8209;file scope</td><td>Legend cites a separate temp&#8209;power .rvt; main model also has real TRP.* sheets &mdash; authoritative source unconfirmed</td></tr>
-          <tr><td class="tbl-note">Areas 2&#8211;4 draft rows</td><td>Zero&#8209;sheet placeholders, expected until real design starts there &mdash; not a problem, just standing</td></tr>
+          <tr><td class="tbl-note">WP Register C2 O1/O2/P1/P2</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; re&#8209;pointed to their real COLO2 sub areas in the 09&#8209;17 scope repair.</td></tr>
+          <tr><td class="tbl-note">TP separate-file scope</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; the Temp Power model was read directly on 09&#8209;17: 11 sheets, all overview/single&#8209;line, none issued. The TRP work&#8209;package sheets live in the UG model. UG model is authoritative.</td></tr>
+          <tr><td class="tbl-note">Areas 2&#8211;4 placeholder rows</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; Areas 3 and 4 were still carrying COLO1&#8217;s M/N/O/P and N/P/R3 letters, so 30 real UGC packages per area had no row at all. Rebuilt from the area key plans; 35 packages per area, per work type.</td></tr>
           <tr><td class="tbl-note">Revit Daily Change Log corrupted (09&#8209;11)</td><td>The log file this page draws its History from was found reduced to a placeholder string, losing prior dated entries &mdash; isolated to that one file, flagged to David, not reconstructed</td></tr>
         </tbody>
       </table>
@@ -660,16 +660,19 @@
       <table>
         <thead><tr><th>Gap</th><th>Since</th><th style="text-align:right">Count</th></tr></thead>
         <tbody>
-          <tr><td class="tbl-note">Zero-match, active phases (DB/GRD/TEL/UGC)</td><td>09-09</td><td class="count">116</td></tr>
-          <tr><td class="tbl-note">I3&#8209;I6 / K4&#8209;K8 (Phase MY) &mdash; no Register row</td><td>09-08</td><td class="count">&mdash;</td></tr>
-          <tr><td class="tbl-note">EY.T1 / EY.T2 &mdash; no Register row</td><td>09-09</td><td class="count">&mdash;</td></tr>
-          <tr><td class="tbl-note">TEL.MY.P2, UGC.EY.J2, UGC.EY.L3 &mdash; no Register row</td><td>09-10</td><td class="count">&mdash;</td></tr>
-          <tr><td class="tbl-note">TP rows ready once TP/TRP source confirmed</td><td>09-09</td><td class="count">15 / 158</td></tr>
+          <tr><td class="tbl-note">Zero-match, active phases (DB/GRD/TEL/UGC)</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span></td><td class="count">&mdash;</td></tr>
+          <tr><td class="tbl-note">I3&#8209;I6 / K4&#8209;K8 (Phase MY) &mdash; no Register row</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span></td><td class="count">&mdash;</td></tr>
+          <tr><td class="tbl-note">EY.T1 &mdash; no Register row</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; EY1 sheet 21 is T1; the row was mis&#8209;named R3</td><td class="count">&mdash;</td></tr>
+          <tr><td class="tbl-note">TEL.MY.P2, UGC.EY.J2, UGC.EY.L3 &mdash; no Register row</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span></td><td class="count">&mdash;</td></tr>
+          <tr><td class="tbl-note">TP rows ready once TP/TRP source confirmed</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; TRP now a tracker work type</td><td class="count">15 live</td></tr>
           <tr><td class="tbl-note">TEL gridline multi-value sheets, conservatively unmatched</td><td>09-09</td><td class="count">11</td></tr>
           <tr><td class="tbl-note">WP Register row-count discrepancy (946 vs. 959 stated)</td><td>09-09</td><td class="count">&mdash;</td></tr>
           <tr><td class="tbl-note">Colo2 vs. Mech Yard phase-tagging</td><td><span style="color:var(--good); font-weight:600;">resolved 09-10</span></td><td class="count">&mdash;</td></tr>
           <tr><td class="tbl-note">UGC.MY.G4, UGC.MY.C4/C5/C6 &mdash; identified as Colo3/Colo4 Mech Yard (MY3/MY4) subareas via key‑plan PDFs</td><td><span style="color:var(--good); font-weight:600;">resolved 09-11</span></td><td class="count">&mdash;</td></tr>
           <tr><td class="tbl-note">UGC.EYP3.001 &mdash; non&#8209;standard sheet number (GRD&#8209;style concat under UGC)</td><td>09-11</td><td class="count">&mdash;</td></tr>
+          <tr><td class="tbl-note">UGC packages with no sheet in the model yet</td><td>09-17</td><td class="count">35 / 147</td></tr>
+          <tr><td class="tbl-note">Site Lighting (SL) &mdash; a work type with no packages defined anywhere</td><td>09-17</td><td class="count">0</td></tr>
+          <tr><td class="tbl-note">AG work types still on COLO1 placeholder letters (AGC/CT/BSKTRY/SUP) &mdash; no AG key plan found to correct them from</td><td>09-17</td><td class="count">428</td></tr>
         </tbody>
       </table>
     </div>
@@ -684,6 +687,11 @@
           <tr><td class="tbl-note">NOT USE sheets dropping counts</td><td>UGC.AD.R1 confirmed; check whether UGC.C1.N1's similar drop has the same cause</td></tr>
           <tr><td class="tbl-note">TEL.EY.N.23</td><td>Sheet number doesn't fit naming convention &mdash; low priority, awareness only</td></tr>
           <tr><td class="tbl-note">N1 vs. EYN1 Sub Area naming</td><td>Confirmed data-entry split, not yet merged</td></tr>
+          <tr><td class="tbl-note">EY1 sheet numbers were a position early</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; tracker had N2=33, N1=34, P1=35&hellip;; key plan and live model both say N3=33, N2=34, N1=35 &hellip; N4=42, and sheet 21 is T1</td></tr>
+          <tr><td class="tbl-note">MY1 sheet 24</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; it is S1, not Q3 (key plan, live model, David 09&#8209;17)</td></tr>
+          <tr><td class="tbl-note">Duplicate register rows for C3.G2 and C3.G5</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; two identical rows each (503/1000, 504/1001), pre&#8209;existing; the later one retired</td></tr>
+          <tr><td class="tbl-note">BIM Locations drawing labels Mech Yard 3 twice</td><td>Where Mech Yard 2 should be &mdash; drawing typo, raised 09&#8209;17, sheet not yet corrected</td></tr>
+          <tr><td class="tbl-note">Models collapse the four yards into a bare EY / MY</td><td>Sheet names give EY1&#8217;s N3 and EY2&#8217;s J2 both as <span class="mono">NOVA102.EY.UG.&hellip;</span>; the register uses the location phase. Matching resolves it by sub area letter &mdash; working, but worth aligning at source.</td></tr>
         </tbody>
       </table>
     </div>
@@ -700,6 +708,7 @@
     <table class="history-table">
       <thead><tr><th style="width:110px;">Date</th><th>What happened</th></tr></thead>
       <tbody>
+        <tr><td class="date">09-17, 2nd pass</td><td class="desc">David: the tracker was not showing the sheets that came in, and the sheets issued did not match the plan. Root cause found in the schedule, not the tracker &mdash; Areas 3 and 4 were still carrying COLO1&#8217;s placeholder sub area letters, so <strong>30 real UGC work packages per area had no row anywhere</strong>, including every COLO3 sheet issued 09&#8209;16 and 09&#8209;17 (C3 E1/E3/G2/G5, EY3 F2/H3, MY3 E3&#8209;E6/G5&#8209;G8). Rebuilt the expected scope from the COLO1/COLO2/COLO3 key plans, with COLO4 on the same template (confirmed by David). Repaired the ACC workbook: 1,158 rows re&#8209;pointed, 70 re&#8209;labelled onto the location phase, 171 retired, 2 duplicate rows removed, 107 sub areas and the EY2&#8209;4/MY2&#8209;4 locations added to the Naming Scheme &mdash; all 6 UG work types now hold exactly 147 packages, with every formula, rollup range and AG row untouched. Rebuilt the tracker catalogue: 16 groups / 154 sheets &rarr; <strong>86 groups / 946 sheets</strong>, adding temp power, prefab, grounding, duct banks and security, and the missing EY4 group. Corrected EY1&#8217;s sheet numbering and MY1 sheet 24. Live model state: 23 UGC packages at IFC, 74 at IFR, 15 drafted but unissued, 35 with no sheet at all.</td></tr>
         <tr><td class="date">09-16</td><td class="desc">Colten flagged that COLO3 sheets are now being issued (only one existed as of 09&#8209;15). Diff vs. 09&#8209;15: +2,745 / &minus;2,507 / 33 reworksetted (49,188 conduits, net +238); 444 of 462 newly WP&#8209;tagged elements landed on the new COLO3 MY3 subareas. Live Revit pull + IFR Work Packages folder review confirmed 19 real COLO3 sheets: 5 new main&#8209;zone (E1/E3/G1/G2/G5), 2 new Elec Yard (F2/H3 &mdash; first real EY3 sheets, new tracker group added), 8 new/reissued Mech Yard (E3&#8209;E6/G5&#8209;G8 new, G4 reissued). WP Register corrected across all three COLO3 blocks (placeholder Phase "EY3"/"MY3" &rarr; real "EY"/"MY", 14/14 + 7/7 + 14/14 subareas now present); Nova102&#8209;Tracker and this dashboard updated and pushed to match.</td></tr>
         <tr><td class="date">09-16, later</td><td class="desc">David asked to remove the tracker's weekend&#8209;work lever, default the Edited&#8209;dates lever to Hold fixed, add a sidebar hide/show toggle, and cross&#8209;reference the newly&#8209;connected <span class="mono">IFR Work Packages</span> ACC folder against the model. All three tracker changes shipped. Folder review: every AG subfolder is empty for every COLO (UG&#8209;only evidence); 23 individual&#8209;sheet PDFs found, all matching already&#8209;tracked WPIDs. Corrected 4 COLO2 IFR dates (I2/J2/K1/L1 &rarr; 09/11, the real file&#8209;received date) in both the tracker and the WP Register Comments; flagged COLO1 Mech Yard M1/O1/O2 as having their file confirmed on hand despite the standing RFI 6.1 hold, for David's call. Confirmed: this reconciliation only covers the UG model &mdash; AG and Temp Power still have no comparable sheet/tag evidence for COLO3's Grounding, Temp Power, or Power scope.</td></tr>
         <tr><td class="date">09-16, later still</td><td class="desc">David connected the ACC <span class="mono">BES RFI</span> folder and asked for these RFIs to be logged and tracked the same way as the others. Read and logged all 34 PDFs (30 distinct BES&#8209;internal RFI numbers, spanning both formally&#8209;answered ARCO/Procore RFIs and still&#8209;open BES&#8209;internal ones, plus 4 non&#8209;RFI ARCO/CM|MC design&#8209;coordination "Issue" markups from 6/29/26) into the 6&#8209;12 Week Lookahead workbook's "BES RFI Impact (Detail)" tab &mdash; extending it from 18 to 30 RFIs plus a new Issues sub&#8209;section, each with real Area/Cost/Schedule/Field impact pulled from the source PDF, not inferred from the filename. Flagged the two-numbering-system collision (BES&#8209;internal RFI # vs. official ARCO/Procore RFI #, e.g. two different "RFI 26"s) explicitly in the tab so it isn't conflated later.</td></tr>
@@ -736,7 +745,7 @@
     <div>NOVA102 UG WP Register &amp; Coordination Schedule</div>
     <div>Field punch list &amp; screenshots, shared in chat 09-10</div>
   </div>
-  <div>Figures current as of the timestamps above &mdash; this is a static snapshot, not a live query. To publish an update: edit index.html and push to main.</div>
+  <div>Figures current as of the timestamps above &mdash; last published 2026-09-17 21:50 UTC &mdash; this is a static snapshot, not a live query. To publish an update: edit index.html and push to main.</div>
 </footer>
 
 </body>
