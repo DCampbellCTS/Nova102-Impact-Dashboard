@@ -285,35 +285,35 @@
 </div>
 
 <div class="v1-flag">
-  <strong>About this page.</strong> Built from the Revit Daily Change Log and cross-checked against the live model &mdash; a Category=Conduits export plus the model's own "CND - CONDUIT SCHEDULE" (2,434 rows). All 7 field punch items below have been checked. Tracked scope is now all 7 UG worksets (05&#8209;ELECTRICAL EQUIPMENT added 09&#8209;10 &mdash; everything in the model is in scope, not just the original 6). See <strong>Open Items &amp; Flags</strong> below for every placeholder, data gap and flag raised on this project to date, and <strong>History</strong> for the day-by-day record. Live on Netlify as of 09-15.
+  <strong>About this page.</strong> Built from the Revit Daily Change Log and cross-checked against the live model &mdash; a Category=Conduits export plus the model's own "CND - CONDUIT SCHEDULE" (2,434 rows). All 7 field punch items below have been checked. Tracked scope is now all 7 UG worksets (05&#8209;ELECTRICAL EQUIPMENT added 09&#8209;10 &mdash; everything in the model is in scope, not just the original 6). See <strong>Open Items &amp; Flags</strong> below for every placeholder, data gap and flag raised on this project to date, and <strong>History</strong> for the day-by-day record. Live on Netlify as of 09-17.
 </div>
 
 <section>
   <div class="kpis">
     <div class="kpi">
       <div class="label">Conduits Tracked</div>
-      <div class="value mono">49,223</div>
-      <div class="foot">7 UG worksets, as of 4:03 PM pull, 09&#8209;16</div>
+      <div class="value mono">50,730</div>
+      <div class="foot">7 UG worksets, as of 9:08 AM pull, 09&#8209;17</div>
     </div>
     <div class="kpi">
       <div class="label">Added Today</div>
-      <div class="value good mono">+651</div>
-      <div class="foot">9:30 AM&rarr;4:03 PM pull, 09&#8209;16 (morning pull's own diff vs 09&#8209;15 wasn't saved &mdash; see History)</div>
+      <div class="value good mono">+2,342</div>
+      <div class="foot">4:03 PM (09&#8209;16)&rarr;9:08 AM (09&#8209;17) pull, all in 03&#8209;UG CONDUITS</div>
     </div>
     <div class="kpi">
       <div class="label">Deleted Today</div>
-      <div class="value crit mono">&minus;602</div>
-      <div class="foot">redrawn / rerouted, 9:30 AM&rarr;4:03 PM pull, 09&#8209;16</div>
+      <div class="value crit mono">&minus;835</div>
+      <div class="foot">redrawn / rerouted (771 in 03&#8209;UG CONDUITS) + 64 true removals in 06&#8209;TELECOM, 4:03 PM (09&#8209;16)&rarr;9:08 AM (09&#8209;17)</div>
     </div>
     <div class="kpi">
       <div class="label">Reworksetted</div>
-      <div class="value mono">0</div>
-      <div class="foot">no workset reassignments this pull &mdash; 73 modified were tag/type changes instead (61 newly WP&#8209;tagged, 12 EMT&rarr;RNC reclassified)</div>
+      <div class="value mono">48</div>
+      <div class="foot">all 03&#8209;UG CONDUITS&rarr;06&#8209;TELECOM; 297 of the remaining 299 modified were WP&#8209;tag changes (194 newly&#8209;tagged, 103 reassigned), 2 EMT&rarr;RNC reclassified</div>
     </div>
     <div class="kpi">
       <div class="label">WP Rows Touched</div>
-      <div class="value mono">144</div>
-      <div class="foot">TP/TRP live matching's first run (35 rows, 2 reaching IFC: C1.P2, MY.O2) + 97 UGC / 8 TEL / 4 GRD refreshed</div>
+      <div class="value mono">48</div>
+      <div class="foot">2 reached Tier 0.5 for the first time (COLO3 E4/E5); 29 corrected for Copy/split&#8209;sheet double&#8209;counting (Tier unchanged &mdash; a matching&#8209;logic fix, see History); 17 O&#8209;text reformatted only</div>
     </div>
     <div class="kpi">
       <div class="label">Open Punch Items</div>
@@ -335,12 +335,12 @@
       <span><span class="swatch" style="background:var(--accent)"></span>Reworksetted (line)</span>
     </div>
     <div class="chart-wrap">
-      <svg class="chart" viewBox="0 0 1280 300" width="1280" height="300" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-16">
+      <svg class="chart" viewBox="0 0 1420 300" width="1420" height="300" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-17">
         <g>
-          <line class="gridline" x1="60" y1="30" x2="1240" y2="30"/>
-          <line class="gridline" x1="60" y1="110" x2="1240" y2="110"/>
-          <line class="zero-line" x1="60" y1="190" x2="1240" y2="190"/>
-          <line class="gridline" x1="60" y1="230" x2="1240" y2="230"/>
+          <line class="gridline" x1="60" y1="30" x2="1380" y2="30"/>
+          <line class="gridline" x1="60" y1="110" x2="1380" y2="110"/>
+          <line class="zero-line" x1="60" y1="190" x2="1380" y2="190"/>
+          <line class="gridline" x1="60" y1="230" x2="1380" y2="230"/>
           <text class="axis-label" x="52" y="34" text-anchor="end">7000</text>
           <text class="axis-label" x="52" y="114" text-anchor="end">3500</text>
           <text class="axis-label" x="52" y="194" text-anchor="end">0</text>
@@ -407,7 +407,13 @@
           <text class="day-label" x="1260" y="256" text-anchor="middle">09&#8209;16</text>
           <text class="bar-label" x="1260" y="270" text-anchor="middle" fill="var(--ink-3)">afternoon pull only, see foot note</text>
         </g>
-        <polyline points="105,187 245,187.5 385,184.7 525,189.4 665,187.7 805,189.1 945,189.3 1085,189.04 1225,190" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <g>
+          <rect x="1350" y="136.46" width="30" height="53.54" fill="var(--good)" rx="2"/>
+          <rect x="1350" y="190" width="30" height="19.09" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="1365" y="131.46" text-anchor="middle">2342</text>
+          <text class="day-label" x="1400" y="256" text-anchor="middle">09&#8209;17</text>
+        </g>
+        <polyline points="105,187 245,187.5 385,184.7 525,189.4 665,187.7 805,189.1 945,189.3 1085,189.04 1225,190 1365,188.9" fill="none" stroke="var(--accent)" stroke-width="2"/>
         <circle cx="105" cy="187" r="3" fill="var(--accent)"/>
         <circle cx="245" cy="187.5" r="3" fill="var(--accent)"/>
         <circle cx="385" cy="184.7" r="3" fill="var(--accent)"/>
@@ -417,6 +423,7 @@
         <circle cx="945" cy="189.3" r="3" fill="var(--accent)"/>
         <circle cx="1085" cy="189.04" r="3" fill="var(--accent)"/>
         <circle cx="1225" cy="190" r="3" fill="var(--accent)"/>
+        <circle cx="1365" cy="188.9" r="3" fill="var(--accent)"/>
       </svg>
     </div>
   </div>
@@ -511,6 +518,7 @@
             <tr><td class="tbl-note">Has this been done for all three models?</td><td><strong>No &mdash; UG only.</strong> This folder, like every direct AG/Temp Power query run this week, has nothing for the AG&#8209;Overall or Temp Power models: every AG subfolder here is empty, the AG model itself has zero COLO3 GRD/TRP/DB/ACG sheets or tags, and the Temp Power model still has only its 7 generic overview sheets, none per&#8209;subarea. Grounding, Temp Power, and Power(ACG) placeholder rows in the WP Register remain un&#8209;correctable until real evidence exists for those two models.</td></tr>
             <tr><td class="tbl-note">BES RFI folder connected &amp; logged</td><td>David connected a new <span class="mono">Project Files/BES RFI</span> folder and asked for these RFIs to be logged and tracked the same way as the others. Read all 34 PDFs (30 distinct BES&#8209;internal RFI numbers + 4 non&#8209;RFI ARCO/CM|MC design&#8209;coordination "Issue" markups) and logged full detail &mdash; Area/Cost/Schedule/Field impact, open vs. resolved status, schedule tie&#8209;in &mdash; into the 6&#8209;12 Week Lookahead workbook's "BES RFI Impact (Detail)" tab, extending it from 18 to 30 RFIs plus a new Issues section. Two new items land on Hard&#8209;Stop field activities: RFI 18 (generator pad/lug mismatch, still open) and RFI 30 (PTX&#8209;EY transformer NEC question, filed today). RFI 27 supersedes RFI 22 at higher severity. RFI 19/20 were already resolved by email; RFI 21 and Issue #4 confirm Telecom is out of BES's scope.</td></tr>
             <tr><td class="tbl-note">Automated afternoon Revit refresh</td><td>The standing daily scheduled task ran against <span class="mono">NOVA102-UG-OVERALL-TRI.rvt</span> this afternoon (its morning attempt found the wrong model open and stopped without touching anything &mdash; see History). Fresh Conduits pull vs. this morning's 9:30&#8209;AM baseline: +651 / &minus;602 / 73 modified (61 newly WP&#8209;tagged, mostly COLO4 main&#8209;zone A2/C2 and a new COLO4 Elec&#8209;Yard subarea D3; 12 EMT&rarr;Rigid Nonmetallic reclassified; zero workset reassignments). WP Register: first-ever live run of the TP&#8209;&gt;TRP sheet matching (switched on 09&#8209;15) populated 35 TP rows, 2 reaching ISSUED FOR CONSTRUCTION (C1.P2, MY.O2); 97 UGC / 8 TEL / 4 GRD rows also refreshed. Model&#8209;health check skipped (last full check 09&#8209;14, only 2 days &mdash; not yet "a few days" per the standing cadence).</td></tr>
+            <tr><td class="tbl-note">Automated morning run &mdash; multi-instance Revit routing corrected mid-run</td><td>Revit runs each open model as its own instance on its own port; the bridge defaults to whichever instance is “active,” not necessarily UG&#8209;Overall. This run initially found AG&#8209;Overall active and logged steps 1&#8209;7 as skipped &mdash; David flagged that each model runs on its own port, <span class="mono">revit_list_instances</span> confirmed UG&#8209;Overall was in fact open on a different port (27017), and the run was redone against it for real after explicitly selecting that instance. Conduits diff vs. 09&#8209;16 4:03&#8209;PM baseline: +2,342 / &minus;835 / 347 modified (297 WP&#8209;tag changes: 194 newly&#8209;tagged incl. COLO4 Mech&#8209;Yard A6/C7/C8 and COLO3 E4/E5, 103 reassigned; 48 elements moved 03&#8209;UG CONDUITS&rarr;06&#8209;TELECOM; 64 confirmed true removals in 06&#8209;TELECOM; 2 EMT&rarr;RNC reclassified). Model health check run (3 days since 09&#8209;14): 518,266 elements (+38,362), warnings down to 562 (fifth straight decrease), 313 sheets (+52). WP Register: 48 rows’ N/O/S changed &mdash; only 2 are real progress (COLO3 E4/E5 reached Tier 0.5 on a new combined sheet, ISSUED FOR REVIEW); the other 46 are a matching&#8209;logic fix (Copy/split&#8209;sheet duplicate elements were being double&#8209;counted into <span class="mono">N</span>, inflating some rows by up to 4 &mdash; corrected by deduplicating on normalized sheet number, same discipline as the 09&#8209;16 (NOT USE)&#8209;exclusion fix). No new/unexplained WP Register gaps &mdash; all 54 unmatched live sheets fall into already&#8209;standing categories (TEL multi&#8209;value ambiguity, immature PREFAB convention, COLO4 main/EY4/MY4 placeholder gaps per the reference doc §7); two minor never&#8209;seen naming oddities (<span class="mono">GRD.EY1.001</span>, <span class="mono">UGC.EYP3.001</span>) flagged but not acted on.</td></tr>
           </tbody>
         </table>
       </div>
@@ -712,6 +720,7 @@
         <tr><td class="date">09-15, midday</td><td class="desc">David asked for a review of the ACC <span class="mono">IFC Work Packages</span> and <span class="mono">IFF Work Packages</span> folders. IFC folder unchanged since 09-11 (combined COLO/Admin power &amp; tele packages). IFF folder held 8 new fabrication PDFs, all filed 09-15 ~10:28 AM, all COLO2 &mdash; a real, official ACC review (#28) is now open on them, due 09-18. Separately, an ACC Review Report (uploaded by David) showed Review #27 ("COLO1 UG IFR") closed today at 12:21 PM &mdash; ARCO (Justin Arbour) approved C1.M1, C1.N1, and EY.N3. Cross-referencing live Revit sheet data also surfaced 10 COLO2 Mech Yard (MY2) subareas (I1, I3&ndash;I6, K4&ndash;K8) that have had real drafted sheets since 09-10 but were never pinned on the tracker &mdash; backfilled. Nova102-Tracker updated and pushed; the Coordination Schedule's WP Register N/O/S/Q writes for these findings are queued pending the live Excel file (open in David's Excel, title showing "Repaired") being closed.</td></tr>
         <tr><td class="date">09-16, afternoon</td><td class="desc">Morning run of the standing scheduled task found <span class="mono">NOVA102-TEMP-POWER-UG-TRI.rvt</span> open instead of the UG-Overall model and stopped at the file check without touching anything (logged, not repeated here). Once the correct model was confirmed open, the automation ran cleanly: diff vs. this morning's 9:30&#8209;AM baseline +651 / &minus;602 / 73 modified, zero reworksetted (49,223 conduits tracked). WP Register: first live run of the TP&rarr;TRP sheet match (35 rows, 2 reaching IFC &mdash; C1.P2, MY.O2) plus 97 UGC / 8 TEL / 4 GRD refreshed; a bug that had let the pass overwrite 16 section&#8209;header rollup rows (COUNTIF/COUNTA formulas) with literal zeros, and one that double&#8209;counted (NOT USE) superseded sheets, were both caught and fixed before the file was left in its final state. Model&#8209;health check skipped (last full check only 2 days ago, 09&#8209;14). Nova102&#8209;Tracker and this dashboard updated and pushed to match.</td></tr>
         <tr><td class="date">09-16, evening</td><td class="desc">David asked for a Temp Power re-check before moving to the AG model. First change of any kind in <span class="mono">NOVA102-TEMP-POWER-UG-TRI.rvt</span> since 09-14: 03-UG CONDUITS grew +4,336 elements (9,888&rarr;14,224). Individual-element inspection (not just family-name counts, which were ambiguous) found a fabricated wheeled temp-power distribution assembly -- camlock connectors, 480V/GFCI receptacles, steel-tube framing, caster wheels, a 3-tier cable-tray-like family -- zero WORK PACKAGE tags. Classified Work Type TP with a Probable (not Confirmed) Phase split via geometry sample: MY (Mech Yard, higher confidence) and EY (Elec Yard, lower confidence); no SubArea assigned, since there is no evidence to back one -- see the WP schedule reference doc &sect;15 for the full method. Pushed to the Coordination Schedule's Temp Power WP Tracking tab, Nova102-Tracker, this dashboard, and the 6-12 Week Lookahead workbook, all at the same confidence level.</td></tr>
+        <tr><td class="date">09-17</td><td class="desc">Morning automation initially found AG&#8209;Overall active and stopped, but David flagged that each open Revit model runs as its own instance on its own port &mdash; <span class="mono">revit_list_instances</span> confirmed UG&#8209;Overall was genuinely open on port 27017, and the run was redone against it. Conduits diff vs. 09&#8209;16 4:03&#8209;PM: +2,342 / &minus;835 / 347 modified (48 reassigned 03&#8209;UG CONDUITS&rarr;06&#8209;TELECOM, 64 true removals in 06&#8209;TELECOM, 194 newly WP&#8209;tagged incl. COLO4 MY A6/C7/C8 and COLO3 E4/E5). Model health check run (3 days since 09&#8209;14): 518,266 elements (+38,362), 562 warnings (fifth straight decrease), 313 sheets (+52). WP Register: 48 rows’ N/O/S changed &mdash; only COLO3 E4/E5 (Tier 0&rarr;0.5, new combined sheet) is real progress; the other 46 are a matching&#8209;logic fix deduplicating Copy/split&#8209;sheet elements that had been double&#8209;counted into <span class="mono">N</span> (Tier unaffected). No new/unexplained Register gaps this pass.</td></tr>
       </tbody>
     </table>
   </div>
