@@ -285,35 +285,35 @@
 </div>
 
 <div class="v1-flag">
-  <strong>About this page.</strong> Built from the Revit Daily Change Log and cross-checked against the live model &mdash; a Category=Conduits export plus the model's own "CND - CONDUIT SCHEDULE" (2,434 rows). All 7 field punch items below have been checked. Tracked scope is now all 7 UG worksets (05&#8209;ELECTRICAL EQUIPMENT added 09&#8209;10 &mdash; everything in the model is in scope, not just the original 6). See <strong>Open Items &amp; Flags</strong> below for every placeholder, data gap and flag raised on this project to date, and <strong>History</strong> for the day-by-day record. Live on Netlify as of 09-17 (2nd pass, scope repair).
+  <strong>About this page.</strong> Built from the Revit Daily Change Log and cross-checked against the live model &mdash; a Category=Conduits export plus the model's own "CND - CONDUIT SCHEDULE" (2,434 rows). All 7 field punch items below have been checked. Tracked scope is now all 7 UG worksets (05&#8209;ELECTRICAL EQUIPMENT added 09&#8209;10 &mdash; everything in the model is in scope, not just the original 6). See <strong>Open Items &amp; Flags</strong> below for every placeholder, data gap and flag raised on this project to date, and <strong>History</strong> for the day-by-day record. Live on Netlify as of 09-18 (conduit runs, fittings and work-package decode).
 </div>
 
 <section>
   <div class="kpis">
     <div class="kpi">
       <div class="label">Conduits Tracked</div>
-      <div class="value mono">50,730</div>
-      <div class="foot">7 UG worksets, as of 9:08 AM pull, 09&#8209;17</div>
+      <div class="value mono">51,041</div>
+      <div class="foot">7 UG worksets, as of 12:10 PM pull, 09&#8209;18</div>
     </div>
     <div class="kpi">
       <div class="label">Added Today</div>
-      <div class="value good mono">+2,342</div>
-      <div class="foot">4:03 PM (09&#8209;16)&rarr;9:08 AM (09&#8209;17) pull, all in 03&#8209;UG CONDUITS</div>
+      <div class="value good mono">+782</div>
+      <div class="foot">9:08 AM (09&#8209;17)&rarr;12:10 PM (09&#8209;18) pull; 766 in 03&#8209;UG CONDUITS, 16 in 06&#8209;TELECOM. 780 of 782 are RNC Sch 40.</div>
     </div>
     <div class="kpi">
       <div class="label">Deleted Today</div>
-      <div class="value crit mono">&minus;835</div>
-      <div class="foot">redrawn / rerouted (771 in 03&#8209;UG CONDUITS) + 64 true removals in 06&#8209;TELECOM, 4:03 PM (09&#8209;16)&rarr;9:08 AM (09&#8209;17)</div>
+      <div class="value crit mono">&minus;475</div>
+      <div class="foot">391 in 03&#8209;UG CONDUITS, 84 in 06&#8209;TELECOM. Net conduit change on the day is +307.</div>
     </div>
     <div class="kpi">
       <div class="label">Reworksetted</div>
-      <div class="value mono">48</div>
-      <div class="foot">all 03&#8209;UG CONDUITS&rarr;06&#8209;TELECOM; 297 of the remaining 299 modified were WP&#8209;tag changes (194 newly&#8209;tagged, 103 reassigned), 2 EMT&rarr;RNC reclassified</div>
+      <div class="value mono">46</div>
+      <div class="foot">all into or out of 00&#8209;HIDDEN. Of the 1,034 modified elements, <strong>983 were WORK PACKAGE tag changes</strong> and 7 were family reclassifications.</div>
     </div>
     <div class="kpi">
       <div class="label">WP Rows Touched</div>
-      <div class="value mono">1,399</div>
-      <div class="foot">scope repair, 2nd pass 09&#8209;17: 1,158 placeholder rows re&#8209;pointed to their real key&#8209;plan sub area, 70 re&#8209;labelled onto the location phase, 171 retired. All 6 UG work types now carry exactly 147 packages. Morning pull separately touched 48.</div>
+      <div class="value mono">0</div>
+      <div class="foot">No Register write this run. The UG model was closed before a live sheet pull could be taken, so N/O/S were left untouched rather than written from stale data &mdash; see Open Items &amp; Flags.</div>
     </div>
     <div class="kpi">
       <div class="label">Open Punch Items</div>
@@ -326,7 +326,7 @@
 <section>
   <div class="section-head">
     <h2>Daily Model Churn</h2>
-    <div class="section-note">Elements added / deleted per pull, Category = Conduits. 6 tracked worksets through 09&#8209;09; 7 from 09&#8209;10 on (05&#8209;ELECTRICAL EQUIPMENT added). Reworksetted elements (type or workset reassignment) shown as a line. 09&#8209;03 and 09&#8209;04 span several days each; a strict daily cadence started 09&#8209;08. 09&#8209;10 and 09&#8209;11 were each two pulls summed into one day (see History below). 09&#8209;14 spans the 09&#8209;11&rarr;09&#8209;14 weekend gap (one pull).</div>
+    <div class="section-note">Elements added / deleted per pull, Category = Conduits. 6 tracked worksets through 09&#8209;09; 7 from 09&#8209;10 on (05&#8209;ELECTRICAL EQUIPMENT added). Reworksetted elements (type or workset reassignment) shown as a line. 09&#8209;03 and 09&#8209;04 span several days each; a strict daily cadence started 09&#8209;08. 09&#8209;10 and 09&#8209;11 were each two pulls summed into one day (see History below). 09&#8209;14 spans the 09&#8209;11&rarr;09&#8209;14 weekend gap (one pull). <strong>Scale corrected 09&#8209;18:</strong> the bars for 09&#8209;03, 09&#8209;04, 09&#8209;08 and 09&#8209;09 had been drawn at an older, smaller scale that was never updated when later days were added &mdash; 09&#8209;03 was labelled 7,098 but drawn at the height of 989. All bars now share one scale, and deleted counts are labelled as well as drawn.</div>
   </div>
   <div class="panel chart-panel">
     <div class="chart-legend">
@@ -335,95 +335,118 @@
       <span><span class="swatch" style="background:var(--accent)"></span>Reworksetted (line)</span>
     </div>
     <div class="chart-wrap">
-      <svg class="chart" viewBox="0 0 1420 300" width="1420" height="300" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-17">
+      <svg class="chart" viewBox="0 0 1680 336" width="1680" height="336" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-18">
         <g>
-          <line class="gridline" x1="60" y1="30" x2="1380" y2="30"/>
-          <line class="gridline" x1="60" y1="110" x2="1380" y2="110"/>
-          <line class="zero-line" x1="60" y1="190" x2="1380" y2="190"/>
-          <line class="gridline" x1="60" y1="230" x2="1380" y2="230"/>
-          <text class="axis-label" x="52" y="34" text-anchor="end">7000</text>
-          <text class="axis-label" x="52" y="114" text-anchor="end">3500</text>
-          <text class="axis-label" x="52" y="194" text-anchor="end">0</text>
-          <text class="axis-label" x="52" y="234" text-anchor="end">&minus;1750</text>
-        </g>
-        <g>
-          <rect x="90" y="167.4" width="30" height="22.6" fill="var(--good)" rx="2"/>
-          <rect x="90" y="190" width="30" height="4.15" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="105" y="162" text-anchor="middle">7098</text>
-          <text class="day-label" x="140" y="256" text-anchor="middle">09&#8209;03</text>
-          <text class="bar-label" x="140" y="270" text-anchor="middle" fill="var(--ink-3)">baseline 08&#8209;27</text>
+          <line class="gridline" x1="60" y1="30.0" x2="1640" y2="30.0"/>
+          <text class="axis-label" x="52" y="34.0" text-anchor="end">8000</text>
+          <line class="gridline" x1="60" y1="72.5" x2="1640" y2="72.5"/>
+          <text class="axis-label" x="52" y="76.5" text-anchor="end">6000</text>
+          <line class="gridline" x1="60" y1="115.0" x2="1640" y2="115.0"/>
+          <text class="axis-label" x="52" y="119.0" text-anchor="end">4000</text>
+          <line class="gridline" x1="60" y1="157.5" x2="1640" y2="157.5"/>
+          <text class="axis-label" x="52" y="161.5" text-anchor="end">2000</text>
+          <line class="zero-line" x1="60" y1="200" x2="1640" y2="200"/>
+          <text class="axis-label" x="52" y="204" text-anchor="end">0</text>
+          <line class="gridline" x1="60" y1="242.5" x2="1640" y2="242.5"/>
+          <text class="axis-label" x="52" y="246.5" text-anchor="end">&minus;2000</text>
         </g>
         <g>
-          <rect x="230" y="184.5" width="30" height="5.5" fill="var(--good)" rx="2"/>
-          <rect x="230" y="190" width="30" height="2" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="245" y="180" text-anchor="middle">1734</text>
-          <text class="day-label" x="280" y="256" text-anchor="middle">09&#8209;04</text>
+          <rect x="90" y="49.17" width="30" height="150.83" fill="var(--good)" rx="2"/>
+          <rect x="90" y="200" width="30" height="27.69" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="105" y="44.17" text-anchor="middle">7098</text>
+          <text class="bar-label" x="105" y="238.69" text-anchor="middle" fill="var(--ink-3)">&minus;1303</text>
+          <text class="day-label" x="105" y="296" text-anchor="middle">09&#8209;03</text>
+          <text class="bar-label" x="105" y="310" text-anchor="middle" fill="var(--ink-3)">baseline 08&#8209;27</text>
         </g>
         <g>
-          <rect x="370" y="174" width="30" height="16" fill="var(--good)" rx="2"/>
-          <rect x="370" y="190" width="30" height="10.7" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="385" y="169" text-anchor="middle">5016</text>
-          <text class="day-label" x="420" y="256" text-anchor="middle">09&#8209;08</text>
-          <text class="bar-label" x="420" y="270" text-anchor="middle" fill="var(--ink-3)">automation begins</text>
+          <rect x="230" y="163.15" width="30" height="36.85" fill="var(--good)" rx="2"/>
+          <rect x="230" y="200" width="30" height="13.37" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="245" y="158.15" text-anchor="middle">1734</text>
+          <text class="bar-label" x="245" y="224.37" text-anchor="middle" fill="var(--ink-3)">&minus;629</text>
+          <text class="day-label" x="245" y="296" text-anchor="middle">09&#8209;04</text>
         </g>
         <g>
-          <rect x="510" y="188.6" width="30" height="1.4" fill="var(--good)" rx="1"/>
-          <rect x="510" y="190" width="30" height="1.8" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="525" y="183" text-anchor="middle">429</text>
-          <text class="day-label" x="560" y="256" text-anchor="middle">09&#8209;09</text>
+          <rect x="370" y="93.41" width="30" height="106.59" fill="var(--good)" rx="2"/>
+          <rect x="370" y="200" width="30" height="71.48" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="385" y="88.41" text-anchor="middle">5016</text>
+          <text class="bar-label" x="385" y="282.49" text-anchor="middle" fill="var(--ink-3)">&minus;3364</text>
+          <text class="day-label" x="385" y="296" text-anchor="middle">09&#8209;08</text>
+          <text class="bar-label" x="385" y="310" text-anchor="middle" fill="var(--ink-3)">automation begins</text>
         </g>
         <g>
-          <rect x="650" y="170.3" width="30" height="19.7" fill="var(--good)" rx="2"/>
-          <rect x="650" y="190" width="30" height="10.4" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="665" y="165" text-anchor="middle">863</text>
-          <text class="day-label" x="700" y="256" text-anchor="middle">09&#8209;10</text>
-          <text class="bar-label" x="700" y="270" text-anchor="middle" fill="var(--ink-3)">today, 2 pulls</text>
+          <rect x="510" y="190.88" width="30" height="9.12" fill="var(--good)" rx="2"/>
+          <rect x="510" y="200" width="30" height="11.92" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="525" y="185.88" text-anchor="middle">429</text>
+          <text class="bar-label" x="525" y="222.92" text-anchor="middle" fill="var(--ink-3)">&minus;561</text>
+          <text class="day-label" x="525" y="296" text-anchor="middle">09&#8209;09</text>
         </g>
         <g>
-          <rect x="790" y="169.5" width="30" height="20.5" fill="var(--good)" rx="2"/>
-          <rect x="790" y="190" width="30" height="12.9" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="805" y="164.5" text-anchor="middle">897</text>
-          <text class="day-label" x="840" y="256" text-anchor="middle">09&#8209;11</text>
-          <text class="bar-label" x="840" y="270" text-anchor="middle" fill="var(--ink-3)">today, 2 pulls</text>
+          <rect x="650" y="181.66" width="30" height="18.34" fill="var(--good)" rx="2"/>
+          <rect x="650" y="200" width="30" height="9.67" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="665" y="176.66" text-anchor="middle">863</text>
+          <text class="bar-label" x="665" y="220.67" text-anchor="middle" fill="var(--ink-3)">&minus;455</text>
+          <text class="day-label" x="665" y="296" text-anchor="middle">09&#8209;10</text>
+          <text class="bar-label" x="665" y="310" text-anchor="middle" fill="var(--ink-3)">today, 2 pulls</text>
         </g>
         <g>
-          <rect x="930" y="170.6" width="30" height="19.4" fill="var(--good)" rx="2"/>
-          <rect x="930" y="190" width="30" height="16.3" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="945" y="165.6" text-anchor="middle">847</text>
-          <text class="day-label" x="980" y="256" text-anchor="middle">09&#8209;14</text>
-          <text class="bar-label" x="980" y="270" text-anchor="middle" fill="var(--ink-3)">after weekend gap</text>
+          <rect x="790" y="180.94" width="30" height="19.06" fill="var(--good)" rx="2"/>
+          <rect x="790" y="200" width="30" height="11.99" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="805" y="175.94" text-anchor="middle">897</text>
+          <text class="bar-label" x="805" y="222.99" text-anchor="middle" fill="var(--ink-3)">&minus;564</text>
+          <text class="day-label" x="805" y="296" text-anchor="middle">09&#8209;11</text>
+          <text class="bar-label" x="805" y="310" text-anchor="middle" fill="var(--ink-3)">today, 2 pulls</text>
         </g>
         <g>
-          <rect x="1070" y="181.4" width="30" height="8.6" fill="var(--good)" rx="2"/>
-          <rect x="1070" y="190" width="30" height="7.3" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="1085" y="176.4" text-anchor="middle">376</text>
-          <text class="day-label" x="1120" y="256" text-anchor="middle">09&#8209;15</text>
-          <text class="bar-label" x="1120" y="270" text-anchor="middle" fill="var(--ink-3)">8266 WP&#8209;tags added (see flag)</text>
-        </g>
-                <g>
-          <rect x="1210" y="175.1" width="30" height="14.9" fill="var(--good)" rx="2"/>
-          <rect x="1210" y="190" width="30" height="13.8" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="1225" y="170.1" text-anchor="middle">651</text>
-          <text class="day-label" x="1260" y="256" text-anchor="middle">09&#8209;16</text>
-          <text class="bar-label" x="1260" y="270" text-anchor="middle" fill="var(--ink-3)">afternoon pull only, see foot note</text>
+          <rect x="930" y="182.0" width="30" height="18.0" fill="var(--good)" rx="2"/>
+          <rect x="930" y="200" width="30" height="15.15" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="945" y="177.0" text-anchor="middle">847</text>
+          <text class="bar-label" x="945" y="226.15" text-anchor="middle" fill="var(--ink-3)">&minus;713</text>
+          <text class="day-label" x="945" y="296" text-anchor="middle">09&#8209;14</text>
+          <text class="bar-label" x="945" y="310" text-anchor="middle" fill="var(--ink-3)">after weekend gap</text>
         </g>
         <g>
-          <rect x="1350" y="136.46" width="30" height="53.54" fill="var(--good)" rx="2"/>
-          <rect x="1350" y="190" width="30" height="19.09" fill="var(--crit)" rx="1"/>
-          <text class="bar-label" x="1365" y="131.46" text-anchor="middle">2342</text>
-          <text class="day-label" x="1400" y="256" text-anchor="middle">09&#8209;17</text>
+          <rect x="1070" y="192.01" width="30" height="7.99" fill="var(--good)" rx="2"/>
+          <rect x="1070" y="200" width="30" height="6.78" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="1085" y="187.01" text-anchor="middle">376</text>
+          <text class="bar-label" x="1085" y="217.78" text-anchor="middle" fill="var(--ink-3)">&minus;319</text>
+          <text class="day-label" x="1085" y="296" text-anchor="middle">09&#8209;15</text>
+          <text class="bar-label" x="1085" y="310" text-anchor="middle" fill="var(--ink-3)">8266 WP&#8209;tags added (see flag)</text>
         </g>
-        <polyline points="105,187 245,187.5 385,184.7 525,189.4 665,187.7 805,189.1 945,189.3 1085,189.04 1225,190 1365,188.9" fill="none" stroke="var(--accent)" stroke-width="2"/>
-        <circle cx="105" cy="187" r="3" fill="var(--accent)"/>
-        <circle cx="245" cy="187.5" r="3" fill="var(--accent)"/>
-        <circle cx="385" cy="184.7" r="3" fill="var(--accent)"/>
-        <circle cx="525" cy="189.4" r="3" fill="var(--accent)"/>
-        <circle cx="665" cy="187.7" r="3" fill="var(--accent)"/>
-        <circle cx="805" cy="189.1" r="3" fill="var(--accent)"/>
-        <circle cx="945" cy="189.3" r="3" fill="var(--accent)"/>
-        <circle cx="1085" cy="189.04" r="3" fill="var(--accent)"/>
-        <circle cx="1225" cy="190" r="3" fill="var(--accent)"/>
-        <circle cx="1365" cy="188.9" r="3" fill="var(--accent)"/>
+        <g>
+          <rect x="1210" y="186.17" width="30" height="13.83" fill="var(--good)" rx="2"/>
+          <rect x="1210" y="200" width="30" height="12.84" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="1225" y="181.17" text-anchor="middle">651</text>
+          <text class="bar-label" x="1225" y="223.84" text-anchor="middle" fill="var(--ink-3)">&minus;604</text>
+          <text class="day-label" x="1225" y="296" text-anchor="middle">09&#8209;16</text>
+          <text class="bar-label" x="1225" y="310" text-anchor="middle" fill="var(--ink-3)">afternoon pull only, see foot note</text>
+        </g>
+        <g>
+          <rect x="1350" y="150.23" width="30" height="49.77" fill="var(--good)" rx="2"/>
+          <rect x="1350" y="200" width="30" height="17.74" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="1365" y="145.23" text-anchor="middle">2342</text>
+          <text class="bar-label" x="1365" y="228.74" text-anchor="middle" fill="var(--ink-3)">&minus;835</text>
+          <text class="day-label" x="1365" y="296" text-anchor="middle">09&#8209;17</text>
+        </g>
+        <g>
+          <rect x="1490" y="183.38" width="30" height="16.62" fill="var(--good)" rx="2"/>
+          <rect x="1490" y="200" width="30" height="10.09" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="1505" y="178.38" text-anchor="middle">782</text>
+          <text class="bar-label" x="1505" y="221.09" text-anchor="middle" fill="var(--ink-3)">&minus;475</text>
+          <text class="day-label" x="1505" y="296" text-anchor="middle">09&#8209;18</text>
+          <text class="bar-label" x="1505" y="310" text-anchor="middle" fill="var(--ink-3)">983 WP&#8209;tag changes (see flag)</text>
+        </g>
+        <polyline points="105,197.22 245,197.68 385,195.07 525,199.45 665,197.85 805,199.17 945,199.34 1085,199.11 1225,200.0 1365,198.98 1505,199.02" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <circle cx="105" cy="197.22" r="3" fill="var(--accent)"/>
+        <circle cx="245" cy="197.68" r="3" fill="var(--accent)"/>
+        <circle cx="385" cy="195.07" r="3" fill="var(--accent)"/>
+        <circle cx="525" cy="199.45" r="3" fill="var(--accent)"/>
+        <circle cx="665" cy="197.85" r="3" fill="var(--accent)"/>
+        <circle cx="805" cy="199.17" r="3" fill="var(--accent)"/>
+        <circle cx="945" cy="199.34" r="3" fill="var(--accent)"/>
+        <circle cx="1085" cy="199.11" r="3" fill="var(--accent)"/>
+        <circle cx="1225" cy="200.0" r="3" fill="var(--accent)"/>
+        <circle cx="1365" cy="198.98" r="3" fill="var(--accent)"/>
+        <circle cx="1505" cy="199.02" r="3" fill="var(--accent)"/>
       </svg>
     </div>
   </div>
@@ -535,6 +558,48 @@
     <div class="section-note">Everything still open across the project's history, not just today's run &mdash; placeholders, data gaps, and flags raised in chat, consolidated in one place. See History below for when each was raised.</div>
   </div>
   <div class="flags-grid">
+    <div class="panel flag-panel">
+      <h3 class="flag-h">Raised 09-18 &mdash; model scope, reconciliation and tagging</h3>
+      <div class="section-note" style="margin-bottom:10px;">First day the tracked scope went past Category=Conduits. Three of these are new; one closes an item that had been open since 09-11.</div>
+      <table class="mini-table">
+        <tbody>
+          <tr><td class="tbl-note">Runs and their own segments sit on different worksets</td><td>Model&#8209;wide, Conduit Runs (720,814&nbsp;ft) reconcile to Conduit segments (686,708&nbsp;ft) plus fitting centreline (34,106&nbsp;ft / 0.61&nbsp;ft per fitting). Per workset they diverge by up to <strong>+24,304&nbsp;ft (03&#8209;UG CONDUITS)</strong> and <strong>&minus;8,397&nbsp;ft (09&#8209;TEMP)</strong>, because a run can be on one workset while its member conduits are on another. Every workset&#8209;filtered figure on this project inherits it. Needs a Revit&#8209;side reassignment pass &mdash; cannot be fixed from a read&#8209;only pull.</td></tr>
+          <tr><td class="tbl-note">47% of in-scope conduit carries no work package</td><td>170,193&nbsp;ft of conduit and 20,634 fittings have an empty WORK PACKAGE parameter. <strong>09&#8209;TEMP is at 0.0%</strong> across 38,612&nbsp;ft, 04&#8209;OVERHEAD at 2.0%, 06&#8209;TELECOM at 11.4%. Only 03&#8209;UG CONDUITS (62.4%) and 07&#8209;GROUNDING (48.7%) can carry a work&#8209;package rollup today. Note the direction of travel is good: 983 elements were tagged on 09&#8209;18 alone.</td></tr>
+          <tr><td class="tbl-note">CLOSED &mdash; &quot;unrecognized sub area&quot; tags are not errors</td><td>The recurring class of finding (UGC.MY.G4, UGC.MY.C4/C5/C6 and similar) is resolved. Decoding every tag against the Register: <strong>127 of 130 land on a row</strong>. Short codes such as MYK1 / C1N1 / EYN1 are Phase plus Sub Area grid with the Work Type dropped, and a slash tag is one kit spanning two sub areas. 30 tags / 83,444&nbsp;ft use the base MY or EY prefix while the Sub Area letter places them in MY2&#8209;4 or EY2&#8209;4 &mdash; correct as written, but a literal text join to the Register misses them, so a rollup has to decode the Sub Area letter.</td></tr>
+          <tr><td class="tbl-note">Three tags genuinely do not resolve</td><td><strong>EYN23</strong> (694&nbsp;ft, 240 fittings, 06&#8209;TELECOM) &mdash; N23 is not a Sub Area, Elec Yard runs N1&#8209;N5, likely EYN2 or EYN3 typed with both digits. <strong>UGC.C3.D2.01.1</strong> (174&nbsp;ft) &mdash; C3 does not own D2, the D letters are Colo&nbsp;4. <strong>TEMP POWER 04</strong> &mdash; free text in the parameter. These three are the only real tagging errors in the model.</td></tr>
+          <tr><td class="tbl-note">A fitting family named DO NOT USE is placed</td><td>13 instances of <strong>PVC TO RGS COUPLING (DONT USE)</strong> sit in live worksets. Either the family name is stale or the instances are. Confirm before they reach a purchase order.</td></tr>
+          <tr><td class="tbl-note">Ground conductor is modelled as conduit</td><td><strong>1#4/0 AWG G</strong> appears in both the Conduits category (3,658 elements / 34,206&nbsp;ft) and Conduit Runs (2,067 / 35,530&nbsp;ft). It is wire, not conduit. It is excluded from every conduit figure in the materials workbook and broken out separately, but it needs its own procurement line. 07&#8209;GROUNDING is almost entirely conductor: 34,199&nbsp;ft of wire against 948&nbsp;ft of conduit.</td></tr>
+          <tr><td class="tbl-note">No WP Register write on 09-18</td><td>Step 5 was not run. The UG model was closed (AG, then Temp Power, were opened in turn) before a live <code>revit_get_sheets</code> pull could be taken, and writing N/O/S from a stale sheet list is worse than not writing. Also still to confirm: whether <code>TRP.*</code> sheets exist in the UG model at all &mdash; the Temp Power model&#8217;s 13 sheets use none of that convention, and the Register holds 147 TP rows that depend on it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel flag-panel">
+      <h3 class="flag-h">AG Model &mdash; read 09-18</h3>
+      <div class="section-note" style="margin-bottom:10px;">NOVA102-AG-OVERALL-TRI.rvt. Gridline&#8209;velocity snapshot pass, diffed against the 09&#8209;17 baseline. Above ground is still deliberately left alone pending the work&#8209;package definition due the week of 09&#8209;22 &mdash; this is monitoring, not scope.</div>
+      <table class="mini-table">
+        <tbody>
+          <tr><td class="tbl-note">1,405 elements added since 09-17</td><td>Conduits 234, Conduit Runs 89, Conduit Fittings 145, Cable Tray + Elec Eqp 817, Electrical Fixtures 120. All in SYSTEM_MAIN &mdash; nothing landed in SYSTEM_SOUTH, so the unresolved south&#8209;to&#8209;COLO mapping did not bite. 215 distinct grid bays touched, concentrated in the <strong>E band at gridlines 4&#8209;5</strong> (425) and the <strong>D band at gridline 5</strong> (232).</td></tr>
+          <tr><td class="tbl-note">3,338 telecom tray elements deleted &mdash; not progress</td><td>The cable tray group shows 817 added against <strong>3,355 removed</strong>, a net loss of 2,538. Almost all of it is 11&#8209;TELECOM TRAY: 2,130 Cable Trays and 1,213 Cable Tray Fittings. Category totals confirm it (Cable Trays 4,485&rarr;2,520). Meanwhile 600 Cable Tray Fittings were added to 10&#8209;POWER TRAY. Reads as a rebuild or re&#8209;host rather than new modelling &mdash; <strong>do not report the 817 as velocity</strong> until someone confirms what happened to the telecom tray.</td></tr>
+          <tr><td class="tbl-note">A lighting package appears to have landed</td><td>Outside the four tracked groups: Lighting Fixtures 1,899&rarr;6,371 (+4,472), Generic Models +2,730, Electrical Equipment Tags +643, sheets 283&rarr;288. Sixteen <code>EL&#8209;102x ELECTRICAL LIGHTING PLAN</code> CAD links went from absent to present.</td></tr>
+          <tr><td class="tbl-note">Method doc was missing and had to be re-derived</td><td>The gridline&#8209;velocity method doc was not in the Claude project. The grid taxonomy and bucketing algorithm were re&#8209;derived from a live grid pull and written back, but two things are lost and need re&#8209;establishing: <strong>the family regexes</strong> that filter what counts as progress (so today&#8217;s counts are unfiltered), and <strong>the COLO mapping</strong>. Snapshots are retained, so the day can be re&#8209;derived once those are agreed.</td></tr>
+          <tr><td class="tbl-note">Snapshot capture now needs splitting</td><td>The combined Conduits + Conduit Runs capture no longer fits the 55&nbsp;s budget &mdash; it truncated at 65,535 of 73,376 elements. Deleted and split into two clean captures. Expect to split that group every run from here.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel flag-panel">
+      <h3 class="flag-h">Temp Power Model &mdash; re-read 09-18</h3>
+      <div class="section-note" style="margin-bottom:10px;">NOVA102-TEMP-POWER-UG-TRI.rvt, opened and read directly. Figures below are the six model categories exported (9,645 elements), not the whole&#8209;document count quoted in the 09&#8209;16 panel.</div>
+      <table class="mini-table">
+        <tbody>
+          <tr><td class="tbl-note">This is not where the temp power conduit lives</td><td>The model holds <strong>162 conduits / 9,926&nbsp;ft</strong>. The UG model&#8217;s 09&#8209;TEMP workset holds 3,792 elements / 38,612&nbsp;ft. Different scope &mdash; do not add this model&#8217;s footage to the UG totals without checking for overlap first. What it actually is: temp power plans by area, equipment layouts, and two single&#8209;line diagrams across 13 sheets.</td></tr>
+          <tr><td class="tbl-note">Zero work-package tagging</td><td>0 of 9,645 elements carry a WORK PACKAGE value. Consistent with 09&#8209;TEMP in the UG model, also at 0%. Temp power is untagged in both models.</td></tr>
+          <tr><td class="tbl-note">The 6,235 &quot;Electrical Fixtures&quot; are not fixtures</td><td>They are nested assembly parts: Spacer1 (1,702), Base Spacers (1,702), Separation 3&quot; (933), 1/2&quot; (768), Caster Wheels (48). Only EF_Camlock (60) is an actual fixture. Any element count off that category is meaningless without a family filter &mdash; relevant if temp power ever joins this churn metric.</td></tr>
+          <tr><td class="tbl-note">2,042 Generic Models sit on a workset named 09-DELETE</td><td>Almost all of the 2,170 TRENCH elements. Live content on a workset that says delete. Worth confirming with the model owner whether it is stale.</td></tr>
+          <tr><td class="tbl-note">Workset discipline has not been applied</td><td>Workset names mirror the UG model, but nearly everything lands on 03&#8209;UG CONDUITS regardless of what it is, including all 6,235 Electrical Fixtures and all 265 Conduit Fittings. A workset&#8209;scoped query here does not mean what it means in the UG model.</td></tr>
+          <tr><td class="tbl-note">Reconciliation cross-check held</td><td>Conduit Runs 10,077&nbsp;ft against segments 9,926&nbsp;ft &mdash; 151&nbsp;ft across 265 fittings, or <strong>0.57&nbsp;ft per fitting</strong>. The UG model gives 0.61&nbsp;ft across 55,951. The runs = segments + fittings reconciliation holds in a second independent model.</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="panel flag-panel">
       <h3 class="flag-h">Automation Reliability &mdash; 09-15</h3>
       <div class="section-note" style="margin-bottom:10px;">Two process findings from today's run, not model data &mdash; flagged because they affect trust in this pipeline's output, not because the project itself changed.</div>
@@ -712,6 +777,7 @@
     <table class="history-table">
       <thead><tr><th style="width:110px;">Date</th><th>What happened</th></tr></thead>
       <tbody>
+        <tr><td class="date">09-18</td><td class="desc">Diff vs. 09&#8209;17: <strong>+782 / &minus;475 / 1,034 modified</strong> (net +307). The modified figure is the story: <strong>983 of them are WORK PACKAGE tag changes</strong>, the largest single day of tagging since the 09&#8209;15 mass event. 46 elements moved into or out of 00&#8209;HIDDEN and 7 were reclassified between families. Model scope widened beyond Conduits for the first time: <strong>Conduit Runs (25,456) and Conduit Fittings (55,951)</strong> pulled and reconciled against the conduit segments. Model&#8209;wide the three categories close &mdash; runs 720,814&nbsp;ft, segments 686,708&nbsp;ft, difference 34,106&nbsp;ft across 55,951 fittings, or 0.61&nbsp;ft of centreline per fitting. Per workset they do not: 03&#8209;UG CONDUITS is +24,304&nbsp;ft on segments, 09&#8209;TEMP is &minus;8,397&nbsp;ft, because a run and its own member conduits can sit on different worksets. Work&#8209;package tags decoded back to the Register: <strong>127 of the 130 tags in the model land on a Register row</strong>. The short codes (MYK1, C1N1, EYN1) are the same scheme with the Work Type dropped &mdash; Phase plus Sub Area grid &mdash; not a rival convention, and the slash tags (UGC.C3.E4/E5.01) are one kit spanning two sub areas. 30 tags / 83,444&nbsp;ft are written with the base MY or EY prefix while the Sub Area letter places them in a numbered yard. Only three tags do not resolve: EYN23, UGC.C3.D2.01.1, TEMP POWER 04. Also read today: the <strong>AG model</strong> (1,405 elements added since 09&#8209;17, all SYSTEM_MAIN, but 3,338 telecom tray elements deleted &mdash; see flags) and the <strong>Temp Power model</strong> (162 conduits only; it is not where the 09&#8209;TEMP scope lives). Delivered: conduit materials and order&#8209;signal workbook rebuilt to 11 tabs covering conduits, runs, fittings, stub&#8209;ups, reconciliation, workset and work&#8209;package rollups.</td></tr>
         <tr><td class="date">09-17, 2nd pass</td><td class="desc">David: the tracker was not showing the sheets that came in, and the sheets issued did not match the plan. Root cause found in the schedule, not the tracker &mdash; Areas 3 and 4 were still carrying COLO1&#8217;s placeholder sub area letters, so <strong>30 real UGC work packages per area had no row anywhere</strong>, including every COLO3 sheet issued 09&#8209;16 and 09&#8209;17 (C3 E1/E3/G2/G5, EY3 F2/H3, MY3 E3&#8209;E6/G5&#8209;G8). Rebuilt the expected scope from the COLO1/COLO2/COLO3 key plans, with COLO4 on the same template (confirmed by David). Repaired the ACC workbook: 1,158 rows re&#8209;pointed, 70 re&#8209;labelled onto the location phase, 171 retired, 2 duplicate rows removed, 107 sub areas and the EY2&#8209;4/MY2&#8209;4 locations added to the Naming Scheme &mdash; all 6 UG work types now hold exactly 147 packages, with every formula, rollup range and AG row untouched. Rebuilt the tracker catalogue: 16 groups / 154 sheets &rarr; <strong>86 groups / 946 sheets</strong>, adding temp power, prefab, grounding, duct banks and security, and the missing EY4 group. Corrected EY1&#8217;s sheet numbering and MY1 sheet 24. Also swept the RFI and submittal logs: BES RFI 31 (ABB REX relay control power), 32 (phase&#8209;conductor combination &mdash; Option B would add homerun conduits) and 33 (BMS/control scope) raised 09&#8209;17 and added here; RFI 23 confirmed issued; RFI 4 and RFI 7 answered 09&#8209;17; Procore RFI #55 (CDU piping / bypass valve spacing, due 09&#8209;18) missing from the lookahead&#8217;s Official RFI Log; and submittals 26 05 13&#8209;1 and 26 05 26&#8209;2 still listed open there although both returned Closed (09/08 and 09/01). Live model state: 23 UGC packages at IFC, 74 at IFR, 15 drafted but unissued, 35 with no sheet at all. David confirmed afterwards: Site Lighting is a work type tracked under the GRD packages, Camps 1&#8209;4 are out of scope, and above ground is deliberately left alone until he and Triad define its work packages and sequence the week of 09&#8209;22.</td></tr>
         <tr><td class="date">09-16</td><td class="desc">Colten flagged that COLO3 sheets are now being issued (only one existed as of 09&#8209;15). Diff vs. 09&#8209;15: +2,745 / &minus;2,507 / 33 reworksetted (49,188 conduits, net +238); 444 of 462 newly WP&#8209;tagged elements landed on the new COLO3 MY3 subareas. Live Revit pull + IFR Work Packages folder review confirmed 19 real COLO3 sheets: 5 new main&#8209;zone (E1/E3/G1/G2/G5), 2 new Elec Yard (F2/H3 &mdash; first real EY3 sheets, new tracker group added), 8 new/reissued Mech Yard (E3&#8209;E6/G5&#8209;G8 new, G4 reissued). WP Register corrected across all three COLO3 blocks (placeholder Phase "EY3"/"MY3" &rarr; real "EY"/"MY", 14/14 + 7/7 + 14/14 subareas now present); Nova102&#8209;Tracker and this dashboard updated and pushed to match.</td></tr>
         <tr><td class="date">09-16, later</td><td class="desc">David asked to remove the tracker's weekend&#8209;work lever, default the Edited&#8209;dates lever to Hold fixed, add a sidebar hide/show toggle, and cross&#8209;reference the newly&#8209;connected <span class="mono">IFR Work Packages</span> ACC folder against the model. All three tracker changes shipped. Folder review: every AG subfolder is empty for every COLO (UG&#8209;only evidence); 23 individual&#8209;sheet PDFs found, all matching already&#8209;tracked WPIDs. Corrected 4 COLO2 IFR dates (I2/J2/K1/L1 &rarr; 09/11, the real file&#8209;received date) in both the tracker and the WP Register Comments; flagged COLO1 Mech Yard M1/O1/O2 as having their file confirmed on hand despite the standing RFI 6.1 hold, for David's call. Confirmed: this reconciliation only covers the UG model &mdash; AG and Temp Power still have no comparable sheet/tag evidence for COLO3's Grounding, Temp Power, or Power scope.</td></tr>
