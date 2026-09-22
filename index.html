@@ -292,28 +292,28 @@
   <div class="kpis">
     <div class="kpi">
       <div class="label">Conduits Tracked</div>
-      <div class="value mono">51,123</div>
-      <div class="foot">7 UG worksets, as of 8:41 AM pull, 09&#8209;21</div>
+      <div class="value mono">51,145</div>
+      <div class="foot">7 UG worksets, as of 8:51 AM pull, 09&#8209;22</div>
     </div>
     <div class="kpi">
       <div class="label">Added Today</div>
-      <div class="value good mono">+316</div>
-      <div class="foot">12:10 PM (09&#8209;18)&rarr;8:41 AM (09&#8209;21) pull, covering the weekend; 297 in 03&#8209;UG CONDUITS, 16 in 06&#8209;TELECOM, 3 in 00&#8209;HIDDEN. All 316 are RNC Sch 40.</div>
+      <div class="value good mono">+333</div>
+      <div class="foot">8:41 AM (09&#8209;21)&rarr;8:51 AM (09&#8209;22) pull; 296 in 03&#8209;UG CONDUITS, 37 in 06&#8209;TELECOM. All 333 are RNC Sch 40. <strong>8 of them are the first COLO4 main&#8209;zone geometry</strong> &mdash; see Open Items &amp; Flags.</div>
     </div>
     <div class="kpi">
       <div class="label">Deleted Today</div>
-      <div class="value crit mono">&minus;234</div>
-      <div class="foot">219 in 03&#8209;UG CONDUITS, 12 in 06&#8209;TELECOM, 3 in 05&#8209;ELECTRICAL EQUIPMENT. Net conduit change over the weekend is +82.</div>
+      <div class="value crit mono">&minus;311</div>
+      <div class="foot">158 in 03&#8209;UG CONDUITS, 153 in 06&#8209;TELECOM. Net conduit change is +22. 06&#8209;TELECOM fell 2,115&rarr;1,999 &mdash; 129 of the deletions carry the unresolvable <span class="mono">EYN23</span> tag, a redraw rather than removal.</div>
     </div>
     <div class="kpi">
       <div class="label">Reworksetted</div>
       <div class="value mono">0</div>
-      <div class="foot">no workset moves this pull. All <strong>21 modified elements are WORK PACKAGE tag changes</strong>, every one in 03&#8209;UG CONDUITS. Model&#8209;wide WP&#8209;tagged conduits 12,364&rarr;12,402.</div>
+      <div class="foot">no workset moves and no family reclassifications. All <strong>121 modified elements are WORK PACKAGE tag changes</strong>, every one in 03&#8209;UG CONDUITS &mdash; 50 of them normalising the short code <span class="mono">MYM2</span> to <span class="mono">UGC.MY.M2.01</span>. Model&#8209;wide WP&#8209;tagged conduits 12,402&rarr;12,352.</div>
     </div>
     <div class="kpi">
       <div class="label">WP Rows Touched</div>
-      <div class="value mono">151</div>
-      <div class="foot">First Register write since 09&#8209;17. Only <strong>3 are real progress</strong> (C1.N2, C1.O1, EY.N3 reaching IFC); 28 are count corrections from a de&#8209;duplication fix and 120 are status&#8209;text refreshes. 335 live sheets read.</div>
+      <div class="value mono">10</div>
+      <div class="foot"><strong>1 is real progress</strong> &mdash; UGC.C1.P1 reaching IFC. The other 9 are a 09&#8209;22 reissue round: 5 packages restamped at IFC (C1.N1, C1.O2, C1.P2, MY.M2, MY.M3) and 4 COLO2 packages at IFR (C2.I3, C2.K5, EY2.J2, EY2.L3). No N&#8209;count changes at all. 335 live sheets read.</div>
     </div>
     <div class="kpi">
       <div class="label">Open Punch Items</div>
@@ -335,19 +335,19 @@
       <span><span class="swatch" style="background:var(--accent)"></span>Reworksetted (line)</span>
     </div>
     <div class="chart-wrap">
-      <svg class="chart" viewBox="0 0 1820 336" width="1820" height="336" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-21">
+      <svg class="chart" viewBox="0 0 1960 336" width="1960" height="336" role="img" aria-label="Daily added, deleted and reworksetted conduit counts from 09-03 through 09-22">
         <g>
-          <line class="gridline" x1="60" y1="30.0" x2="1780" y2="30.0"/>
+          <line class="gridline" x1="60" y1="30.0" x2="1920" y2="30.0"/>
           <text class="axis-label" x="52" y="34.0" text-anchor="end">8000</text>
-          <line class="gridline" x1="60" y1="72.5" x2="1780" y2="72.5"/>
+          <line class="gridline" x1="60" y1="72.5" x2="1920" y2="72.5"/>
           <text class="axis-label" x="52" y="76.5" text-anchor="end">6000</text>
-          <line class="gridline" x1="60" y1="115.0" x2="1780" y2="115.0"/>
+          <line class="gridline" x1="60" y1="115.0" x2="1920" y2="115.0"/>
           <text class="axis-label" x="52" y="119.0" text-anchor="end">4000</text>
-          <line class="gridline" x1="60" y1="157.5" x2="1780" y2="157.5"/>
+          <line class="gridline" x1="60" y1="157.5" x2="1920" y2="157.5"/>
           <text class="axis-label" x="52" y="161.5" text-anchor="end">2000</text>
-          <line class="zero-line" x1="60" y1="200" x2="1780" y2="200"/>
+          <line class="zero-line" x1="60" y1="200" x2="1920" y2="200"/>
           <text class="axis-label" x="52" y="204" text-anchor="end">0</text>
-          <line class="gridline" x1="60" y1="242.5" x2="1780" y2="242.5"/>
+          <line class="gridline" x1="60" y1="242.5" x2="1920" y2="242.5"/>
           <text class="axis-label" x="52" y="246.5" text-anchor="end">&minus;2000</text>
         </g>
         <g>
@@ -442,6 +442,14 @@
           <text class="bar-label" x="1645" y="215.97" text-anchor="middle" fill="var(--ink-3)">&minus;234</text>
           <text class="day-label" x="1645" y="296" text-anchor="middle">09&#8209;21</text>
           <text class="bar-label" x="1645" y="310" text-anchor="middle" fill="var(--ink-3)">after weekend gap; 21 WP&#8209;tag changes</text>
+        </g>
+        <g>
+          <rect x="1770" y="192.92" width="30" height="7.08" fill="var(--good)" rx="2"/>
+          <rect x="1770" y="200" width="30" height="6.61" fill="var(--crit)" rx="1"/>
+          <text class="bar-label" x="1785" y="187.92" text-anchor="middle">333</text>
+          <text class="bar-label" x="1785" y="217.61" text-anchor="middle" fill="var(--ink-3)">&minus;311</text>
+          <text class="day-label" x="1785" y="296" text-anchor="middle">09&#8209;22</text>
+          <text class="bar-label" x="1785" y="310" text-anchor="middle" fill="var(--ink-3)">121 WP&#8209;tag changes; telecom redraw</text>
         </g>
         <polyline points="105,197.22 245,197.68 385,195.07 525,199.45 665,197.85 805,199.17 945,199.34 1085,199.11 1225,200.0 1365,198.98 1505,199.02" fill="none" stroke="var(--accent)" stroke-width="2"/>
         <circle cx="105" cy="197.22" r="3" fill="var(--accent)"/>
@@ -772,6 +780,7 @@
       <h3 class="flag-h">Model Data-Quality Flags</h3>
       <table>
         <tbody>
+          <tr><td class="tbl-note">First COLO4 main&#8209;zone geometry has appeared</td><td>The daily COLO4 watch fired for the first time on 09&#8209;22. <strong>8 added conduits sit inside COLO4&rsquo;s grid block in SYSTEM_MAIN</strong> (X 360&ndash;556, Y &minus;164 to &minus;132), not in the Mech Yard strip at Y &asymp; &minus;274. Seven are untagged; the eighth carries <span class="mono">UGC.C4.C3/C4.01</span> with FROM/TO <span class="mono">RP&#8209;MY4&#8209;3&#8209;3&#8209;2 &rarr; RP&#8209;MY4&#8209;3&#8209;3&#8209;1</span>, so this reads as Mech&#8209;Yard&#8209;4 tie&#8209;in work crossing the main&#8209;zone boundary at gridline 6 rather than the start of the COLO4 main&#8209;zone build. <strong>COLO4 was deliberately held out of the TimeLiner;</strong> reported, not acted on &mdash; David&rsquo;s call whether this counts as the trigger. MY4 FROM/TO fill is still 0 of 2,266 across the eight MY4 packages.</td></tr>
           <tr><td class="tbl-note">AG model is a save&#8209;as of UG and was never purged</td><td>Found 09&#8209;21 by reading all three models in one pass. <strong>44,156 of the AG model&rsquo;s 49,086 conduits share ElementIds with the UG model &mdash; 86%</strong> &mdash; including all 3,792 09&#8209;TEMP conduits at 100% overlap with zero type mismatches. ElementIds are per&#8209;document and survive a save&#8209;as, so this is not coincidence. Only about <strong>4,930</strong> AG conduits are genuinely above&#8209;ground content. <strong>Never sum conduit quantities across the two models</strong> &mdash; a takeoff or progress percentage built that way double&#8209;counts ~44,000 elements and most of the footage, and any figure quoted as &ldquo;the AG model contains N conduits&rdquo; overstates AG by roughly 10&times;. The AG velocity metric is unaffected (it counts only elements added between AG snapshots; the copied content is static). <strong>Needs a decision:</strong> should the AG model be purged back to AG&#8209;only scope before Triad defines the AG work packages this week?</td></tr>
           <tr><td class="tbl-note">Temp power exists in three models, only one of it real</td><td>The UG model&rsquo;s 09&#8209;TEMP workset holds 3,792 conduits and <strong>has not moved once across 17 tracked pulls since 08&#8209;27</strong>. The same 3,792 elements are in the AG model. The standalone Temp Power model holds a different 162 conduits / 9,926&nbsp;ft and has not changed since 09&#8209;18. Combined with the FROM/TO scan (09&#8209;TEMP ~100% missing) and zero WP tagging, the UG 09&#8209;TEMP content reads as legacy carried forward &mdash; worth asking whether it should be retired.</td></tr>
           <tr><td class="tbl-note">Temp power skid is labelled in Comments, not WORK PACKAGE</td><td>878 elements in the Temp Power model carry a Comments value and the values are structural: SKID FRAME 588, SKID FIXTURE 264, NUMBER 26. Mark is empty on all 9,645. If temp power ever needs work&#8209;package attribution, Comments is the existing structure to build on.</td></tr>
@@ -835,6 +844,7 @@
         <tr><td class="date">09-16, afternoon</td><td class="desc">Morning run of the standing scheduled task found <span class="mono">NOVA102-TEMP-POWER-UG-TRI.rvt</span> open instead of the UG-Overall model and stopped at the file check without touching anything (logged, not repeated here). Once the correct model was confirmed open, the automation ran cleanly: diff vs. this morning's 9:30&#8209;AM baseline +651 / &minus;602 / 73 modified, zero reworksetted (49,223 conduits tracked). WP Register: first live run of the TP&rarr;TRP sheet match (35 rows, 2 reaching IFC &mdash; C1.P2, MY.O2) plus 97 UGC / 8 TEL / 4 GRD refreshed; a bug that had let the pass overwrite 16 section&#8209;header rollup rows (COUNTIF/COUNTA formulas) with literal zeros, and one that double&#8209;counted (NOT USE) superseded sheets, were both caught and fixed before the file was left in its final state. Model&#8209;health check skipped (last full check only 2 days ago, 09&#8209;14). Nova102&#8209;Tracker and this dashboard updated and pushed to match.</td></tr>
         <tr><td class="date">09-16, evening</td><td class="desc">David asked for a Temp Power re-check before moving to the AG model. First change of any kind in <span class="mono">NOVA102-TEMP-POWER-UG-TRI.rvt</span> since 09-14: 03-UG CONDUITS grew +4,336 elements (9,888&rarr;14,224). Individual-element inspection (not just family-name counts, which were ambiguous) found a fabricated wheeled temp-power distribution assembly -- camlock connectors, 480V/GFCI receptacles, steel-tube framing, caster wheels, a 3-tier cable-tray-like family -- zero WORK PACKAGE tags. Classified Work Type TP with a Probable (not Confirmed) Phase split via geometry sample: MY (Mech Yard, higher confidence) and EY (Elec Yard, lower confidence); no SubArea assigned, since there is no evidence to back one -- see the WP schedule reference doc &sect;15 for the full method. Pushed to the Coordination Schedule's Temp Power WP Tracking tab, Nova102-Tracker, this dashboard, and the 6-12 Week Lookahead workbook, all at the same confidence level.</td></tr>
         <tr><td class="date">09-17</td><td class="desc">Morning automation initially found AG&#8209;Overall active and stopped, but David flagged that each open Revit model runs as its own instance on its own port &mdash; <span class="mono">revit_list_instances</span> confirmed UG&#8209;Overall was genuinely open on port 27017, and the run was redone against it. Conduits diff vs. 09&#8209;16 4:03&#8209;PM: +2,342 / &minus;835 / 347 modified (48 reassigned 03&#8209;UG CONDUITS&rarr;06&#8209;TELECOM, 64 true removals in 06&#8209;TELECOM, 194 newly WP&#8209;tagged incl. COLO4 MY A6/C7/C8 and COLO3 E4/E5). Model health check run (3 days since 09&#8209;14): 518,266 elements (+38,362), 562 warnings (fifth straight decrease), 313 sheets (+52). WP Register: 48 rows’ N/O/S changed &mdash; only COLO3 E4/E5 (Tier 0&rarr;0.5, new combined sheet) is real progress; the other 46 are a matching&#8209;logic fix deduplicating Copy/split&#8209;sheet elements that had been double&#8209;counted into <span class="mono">N</span> (Tier unaffected). No new/unexplained Register gaps this pass.</td></tr>
+        <tr><td class="date">09-22</td><td class="desc">Diff vs. 09&#8209;21: <strong>+333 / &minus;311 / 121 modified</strong> (net +22; 51,145 raw, 51,141 tracked). Every addition and deletion is RNC Sch 40; all 121 modifications are WORK PACKAGE tag changes. 06&#8209;TELECOM fell 2,115&rarr;1,999 on an <span class="mono">EYN23</span> redraw. Model health refreshed: 540,177 elements (+5,984), <strong>494 warnings &mdash; the first increase after six consecutive decreases</strong>, 343 sheets (+8), 2 links not loaded. A real document drop landed the same morning: <strong>4 COLO1 IFC drawings</strong> (C1.N1, C1.P2, MY.M2, MY.M3, filed 8:21 AM) and <strong>4 COLO2 IFR drawings</strong> (C2.I3, C2.K5, EY.J2, EY.L3, filed 8:40 AM), matching the model&rsquo;s own 09&#8209;22 reissue round. WP Register: 10 rows changed, of which only <strong>UGC.C1.P1 reaching IFC</strong> is progress. <strong>The COLO4 main&#8209;zone watch fired for the first time</strong> &mdash; see Open Items &amp; Flags.</td></tr>
       </tbody>
     </table>
   </div>
@@ -847,7 +857,7 @@
     <div>NOVA102 UG WP Register &amp; Coordination Schedule</div>
     <div>Field punch list &amp; screenshots, shared in chat 09-10</div>
   </div>
-  <div>Figures current as of the timestamps above &mdash; last published 2026-09-21 13:50 UTC &mdash; this is a static snapshot, not a live query. To publish an update: edit index.html and push to main.</div>
+  <div>Figures current as of the timestamps above &mdash; last published 2026-09-22 14:15 UTC &mdash; this is a static snapshot, not a live query. To publish an update: edit index.html and push to main.</div>
 </footer>
 
 </body>
