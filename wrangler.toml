@@ -1,0 +1,11 @@
+name = "nova102-impact-dashboard"
+compatibility_date = "2026-09-01"
+
+# Static site on Cloudflare Workers (moved from Netlify 2026-09-30), served from the repo root.
+# .assetsignore keeps repo-only files (README, tools, netlify config) from being served.
+# Reachable only through its custom domain, which sits behind Cloudflare Access (HCG sign-in).
+workers_dev = false
+preview_urls = false
+
+[assets]
+directory = "."
