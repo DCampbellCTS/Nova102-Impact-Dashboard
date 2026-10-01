@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>NOVA102 Expectation Gaps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a field-report register. Urgent first, then items ranked by field need date, the question register, the coverage matrix, and the method. */
+:root{
+  --bg:#f5f6f4; --surface:#ffffff; --ink:#1d2621; --muted:#5b6660; --line:#d6dbd7;
+  --accent:#2f6b57; --accent-soft:#e3efe9;
+  --urgent:#b3361f; --urgent-soft:#f8e3de; --ask:#8a4d00; --ask-soft:#f6e6cf; --push:#4a5d78; --push-soft:#e4e9f1; --watch:#6b6f6c; --watch-soft:#ececea;
+  --zero:#fbeae6; --zero-ink:#a2321d;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#141917; --surface:#1c2320; --ink:#e4ebe7; --muted:#9aa7a0; --line:#2f3934;
+  --accent:#7cc3a7; --accent-soft:#1f3a30;
+  --urgent:#f08a72; --urgent-soft:#3b211b; --ask:#e9b066; --ask-soft:#382a17; --push:#9db3d6; --push-soft:#222b39; --watch:#a9aeab; --watch-soft:#262b29;
+  --zero:#3a221c; --zero-ink:#f3a08b; color-scheme:dark }}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--f-body)}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:grid;gap:36px}
+header{display:grid;gap:10px}
+.eyebrow{font:600 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(28px,4.4vw,40px)/1.1 var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font:600 22px/1.2 var(--f-display);margin:0 0 4px;text-wrap:balance}
+h3{font:600 18px/1.3 var(--f-display);margin:0;text-wrap:balance}
+p{margin:0;max-width:70ch}
+.meta{color:var(--muted);font-size:14px;max-width:84ch}
+.strip{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;font:600 14px/1 var(--f-body);background:var(--surface);border:1px solid var(--line)}
+.pill b{font:700 18px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.dot{width:10px;height:10px;border-radius:50%}
+.d-urgent{background:var(--urgent)} .d-ask{background:var(--ask)} .d-push{background:var(--push)} .d-watch{background:var(--watch)}
+section{display:grid;gap:14px}
+.items{display:grid;gap:14px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:grid;grid-template-columns:6px 1fr}
+.item .bar{background:var(--watch)}
+.item.urgent .bar{background:var(--urgent)} .item.ask .bar{background:var(--ask)} .item.push .bar{background:var(--push)}
+.item .body{padding:16px 18px;display:grid;gap:12px;min-width:0}
+.ihead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+.tag{font:600 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:4px}
+.tag.urgent{background:var(--urgent-soft);color:var(--urgent)} .tag.ask{background:var(--ask-soft);color:var(--ask)} .tag.push{background:var(--push-soft);color:var(--push)} .tag.watch{background:var(--watch-soft);color:var(--watch)}
+.loc{font:600 12px/1 var(--f-mono);color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px}
+.facts span{color:var(--muted)} .facts b{color:var(--ink);font-weight:600}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 20px}
+.cols>div{min-width:0;display:grid;gap:4px;align-content:start}
+.lbl{font:600 11px/1.2 var(--f-mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.ask-box{background:var(--accent-soft);border-radius:6px;padding:10px 12px;display:grid;gap:4px}
+.ask-box .lbl{color:var(--accent)}
+ul.ev{margin:0;padding-left:18px;display:grid;gap:2px;font-size:15px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{font:600 11px/1.25 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);vertical-align:bottom;white-space:normal;min-width:64px}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
+td.z{background:var(--zero);color:var(--zero-ink);font-weight:600}
+td.na{color:var(--muted)}
+td small{display:block;color:var(--muted);font-size:11px}
+tr.grp td{background:var(--bg);font:600 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left}
+table.reg td,table.reg th{text-align:left;white-space:normal;vertical-align:top}
+table.reg td:first-child,table.reg th:first-child{position:static;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+table.reg td.q{min-width:320px;max-width:520px}
+.status{font:600 11px/1 var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ask);white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:6px;background:var(--zero);border:1px solid var(--zero-ink)}
+.tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.test{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.test .n{font:700 13px/1 var(--f-mono);color:var(--accent)}
+.grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.grade{display:grid;gap:4px;font-size:15px}
+.notes{display:grid;gap:8px;font-size:15px;color:var(--muted)}
+.notes p{max-width:84ch}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">NOVA102 · Expectation gap check · updated 2026-10-01</div>
+  <h1>What the model owes the field, and what to ask before anyone else notices</h1>
+  <p class="meta">This page compares the live UG and AG Revit models against the design sheets, answered RFIs, ARCO's lookahead and BES's own priority list. Gaps are ranked by when the field needs them. Each one ends in a question for BES, ARCO or the Design Team, and the question register below tracks what has been asked. The BIM Assistant updates it weekly; David sends the questions.</p>
+  <div class="strip">
+    <span class="pill"><span class="dot d-urgent"></span><b>1</b> due tomorrow</span>
+    <span class="pill"><span class="dot d-ask"></span><b>1</b> ask now: scope unknown</span>
+    <span class="pill"><span class="dot d-push"></span><b>3</b> in BES scope, stalled</span>
+    <span class="pill"><span class="dot d-watch"></span><b>2</b> watch</span>
+  </div>
+</header>
+
+<section>
+  <h2>Gaps, soonest field need first</h2>
+  <div class="items">
+
+    <article class="item urgent"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag urgent">Due 10-02</span><h3>Admin under-slab branch power and data, including the Area R floor boxes</h3><span class="loc">ADMIN · AREA R</span></div>
+      <div class="facts"><span>Field need <b>Slab on grade 10-02</b> (AD-UG-14, marked "?" by ARCO)</span><span>BES scope <b>Yes, on hold</b></span><span>Questions <b>Q1, Q2</b></span></div>
+      <div class="cols">
+        <div><span class="lbl">Design calls for</span><p>EP-101R carries 20 FB1 tags across the workstation clusters, and ARCO RFI #39 (answered 08-18) gives a dimensioned floor-box plan. T-368 and T-409 add the data and AV drops. ARCO RFI #22 allows direct-buried PVC under the slab, so this rough-in has to go in before the pour.</p></div>
+        <div><span class="lbl">Model has</span><p>5 floor boxes, each fed only by a short EMT stub, with no under-slab raceway and no data devices. Admin-tagged UG conduit was last added 09-10, and those packages cover only site feeders.</p></div>
+        <div><span class="lbl">BES's own status (09-25 list)</span><p>Branch conduits, Admin: 20%, on hold, "waiting for updated redlines." Homerun redlines, Admin: 90%, on hold behind the branch-circuit voltage-drop RFI (BES 22/27).</p></div>
+      </div>
+      <div class="ask-box"><span class="lbl">Ask today</span><p>Confirm with ARCO and Triad whether the 10-02 pour stands and what Triad is roughing in from. Ask BES what releases the two holds, and whether Area R can be modeled from EP-101R and the RFI #39 plan before the pour.</p></div>
+    </div></article>
+
+    <article class="item ask"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag ask">Ask now</span><h3>Admin fire alarm: nothing modeled, and not on BES's list</h3><span class="loc">ADMIN · AG</span></div>
+      <div class="facts"><span>Field need <b>No AG install dates yet</b> (dry-in 12-11)</span><span>BES scope <b>Unknown</b></span><span>Question <b>Q3</b></span></div>
+      <div class="cols">
+        <div><span class="lbl">Design calls for</span><p>FA-101Q and FA-101R fire alarm plans, the same series as the COLO sheets FA-101A to FA-101P.</p></div>
+        <div><span class="lbl">Model has</span><p>The fire alarm workset has 15,170 elements across COLO1 to COLO4, all added in the last week. Admin has none, and no fire alarm task appears on BES's priority list.</p></div>
+      </div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>Who is modeling fire alarm, and is Admin included? If it is out of BES's scope, we need to know whose it is before Triad asks.</p></div>
+    </div></article>
+
+    <article class="item push"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag push">Stalled at BES</span><h3>Security conduit to the devices already placed</h3><span class="loc">ADMIN · COLO1–4 · AG</span></div>
+      <div class="facts"><span>Field need <b>No AG install dates yet</b></span><span>BES scope <b>Yes: 0%, to do</b></span><span>Question <b>Q4</b></span></div>
+      <div class="cols">
+        <div><span class="lbl">Design and model</span><p>TY-1xx and TY-2xx per area. Devices are in: Admin 678, COLO1 614, COLO2 458, COLO3 470, COLO4 439. Security conduit appears only in Mech Yard 1 (80 runs).</p></div>
+        <div><span class="lbl">BES's own status</span><p>"Modeling security conduits" for Admin and COLO1 to COLO4: 0%, to do. Security redlines run from 0% to 30%. BES RFI 48 (backboxes for intercoms and sounders) is still pending.</p></div>
+      </div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>When does security conduit start, and is RFI 48 the only thing holding it?</p></div>
+    </div></article>
+
+    <article class="item push"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag push">Stalled at BES</span><h3>Lighting conduit in the COLOs, and the ARCO #69 direction</h3><span class="loc">COLO1–4 · AG</span></div>
+      <div class="facts"><span>Field need <b>No AG install dates yet</b></span><span>BES scope <b>Yes, on hold</b></span><span>Question <b>Q5</b></span></div>
+      <div class="cols">
+        <div><span class="lbl">Design and model</span><p>Fixtures are in (about 1,040 to 1,208 per COLO, last added around 09-18), but there is no lighting conduit in any COLO. Admin has 1,482 runs. ARCO RFI #69 (answered 09-29) calls for plenum lighting to match Building 1, with a separate override switch inside the HAC.</p></div>
+        <div><span class="lbl">BES's own status</span><p>Lighting conduits for COLO1 to COLO4: 0%, on hold, "waiting for redlines." COLO1 lighting redlines: 5%, on hold. Fixtures are marked done, with a note that they need remodeling once the submittal arrives.</p></div>
+      </div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>Whose redlines are they waiting on, and by when? Will the ARCO #69 plenum lighting and switch be modeled?</p></div>
+    </div></article>
+
+    <article class="item push"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag push">Stalled at BES</span><h3>Yard and site lighting</h3><span class="loc">EY1–4 · MY1–4</span></div>
+      <div class="facts"><span>Field need <b>Check lookahead</b></span><span>BES scope <b>Yes, on hold</b></span><span>Question <b>Q6</b></span></div>
+      <div class="cols">
+        <div><span class="lbl">Design and model</span><p>Each yard has an EL-101EY or EL-101MY lighting plan. There are no light fixtures in the yards in either model; the UG model has 5 to 10 street-pole bases per yard.</p></div>
+        <div><span class="lbl">BES's own status</span><p>Site/EYD/MYD lighting redlines: 90%, on hold behind the same voltage-drop RFI as the Admin homeruns.</p></div>
+      </div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>Did the BES 22 answer (filed 09-22) release the voltage-drop hold? If not, what is still missing? This one hold blocks both Admin homeruns and yard lighting.</p></div>
+    </div></article>
+
+    <article class="item"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag watch">Watch</span><h3>Grounding has not moved in weeks in most areas</h3><span class="loc">UG</span></div>
+      <p>The last grounding added was COLO2 on 09-03, COLO3 and COLO4 on 09-04, Elec Yards 2 to 4 on 09-10, and Admin before 08-27. Every area has an EG-101 plan. It is probably finished, but confirm no change is pending.</p>
+    </div></article>
+
+    <article class="item"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag watch">Watch</span><h3>Model complaints already in the RFI channel</h3><span class="loc">BES RFIs</span></div>
+      <ul class="ev">
+        <li>BES RFI 46 (09-25): HAC racking is modeled without dedicated supports for telecom tray and busway.</li>
+        <li>BES RFI 34 (answered 09-24): ICM conduit routing on ER-100.1 disagrees with E-602.</li>
+      </ul>
+    </div></article>
+
+  </div>
+</section>
+
+<section>
+  <h2>Question register</h2>
+  <p class="meta">Each question is asked once. When an answer comes back, it is recorded here and the gap is re-graded. The drafts below are ready for David to send; nothing goes out automatically.</p>
+  <div class="tablewrap">
+  <table class="reg">
+    <thead><tr><th>#</th><th>Question</th><th>To</th><th>Gap</th><th>Needed by</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Q1</td><td class="q">Is Admin slab on grade still 10/02 (your lookahead marks it "?")? If it is, what is Triad roughing in from under the slab in Area R: EP-101R and the RFI #39 floor-box plan directly, or a model that isn't issued yet?</td><td>ARCO, Triad</td><td>Admin under-slab</td><td>10-01</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q2</td><td class="q">Your priority list shows Admin branch conduits at 20% on hold for updated redlines, and Admin homerun redlines at 90% on hold for the branch voltage-drop RFI. What exactly releases each one? Can Area R floor boxes and under-slab raceway be modeled before the pour? The model has 5 floor boxes against about 19 on EP-101R.</td><td>BES</td><td>Admin under-slab</td><td>10-02</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q3</td><td class="q">FA-101Q/R show Admin fire alarm. COLO1 to COLO4 have fire alarm modeled, Admin has none, and fire alarm is not on your priority list. Is Admin fire alarm in your scope, and when will it be modeled?</td><td>BES</td><td>Admin fire alarm</td><td>Before AG IFC</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q4</td><td class="q">Security devices are placed in Admin and COLO1 to COLO4, but security conduit is at 0% (to do). When does it start, and is BES RFI 48 the only blocker?</td><td>BES</td><td>Security conduit</td><td>Before AG IFC</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q5</td><td class="q">COLO1 to COLO4 lighting conduits are on hold waiting for redlines. Whose redlines, and due when? Will ARCO #69 (plenum lighting to match Building 1, separate override switch in the HAC) be modeled?</td><td>BES</td><td>COLO lighting</td><td>Before AG IFC</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q6</td><td class="q">Did the BES 22 answer (filed 09-22) release the branch voltage-drop hold on the Admin homeruns and the site/yard lighting redlines? If not, what is still needed, and from whom?</td><td>BES</td><td>Admin homeruns, yard lighting</td><td>10-02</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q7</td><td class="q">Please issue the IFC electrical drawing set to ACC. Engineering's RFI answers point to the "latest IFC electrical drawings", but only the IFC specifications are on file.</td><td>ARCO / Design Team</td><td>All, design baseline</td><td>Open</td><td><span class="status">Drafted</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>Coverage matrix</h2>
+  <p class="meta">Element counts per location on 2026-10-01. Red means the design has a plan sheet for that system and location but the model has nothing. Small text is the date the last element was added. A dash means no design sheet calls for it.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr>
+      <th>Location</th><th>UG power conduit</th><th>UG telecom conduit</th><th>Grounding</th><th>Overhead power conduit</th><th>Light fixtures</th><th>Lighting conduit</th><th>Security devices</th><th>Security conduit</th><th>Fire alarm conduit</th><th>Floor boxes</th><th>Power tray</th><th>Telecom tray</th><th>Elec. equipment</th>
+    </tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="14">Buildings</td></tr>
+      <tr><td>Admin</td><td>336<small>09-10*</small></td><td>374<small>site*</small></td><td>89<small>≤08-27</small></td><td>1,267<small>10-01</small></td><td>464<small>09-22</small></td><td>1,482<small>10-01</small></td><td>678<small>10-01</small></td><td class="z">0</td><td class="z">0</td><td class="z">5<small>of ~19</small></td><td>12</td><td>35</td><td>68</td></tr>
+      <tr><td>COLO1</td><td>1,458<small>09-30</small></td><td>64</td><td>334<small>09-08</small></td><td>1,411<small>10-01</small></td><td>1,208<small>09-18</small></td><td class="z">0</td><td>614<small>10-01</small></td><td class="z">0</td><td>168<small>10-01</small></td><td class="na">–</td><td>523</td><td>527</td><td>796</td></tr>
+      <tr><td>COLO2</td><td>937<small>10-01</small></td><td>0</td><td>275<small>09-03</small></td><td>327</td><td>1,040<small>09-18</small></td><td class="z">0</td><td>458<small>10-01</small></td><td class="z">0</td><td>138<small>10-01</small></td><td class="na">–</td><td>443</td><td>426</td><td>575</td></tr>
+      <tr><td>COLO3</td><td>911<small>09-24</small></td><td>0</td><td>268<small>09-04</small></td><td>4</td><td>1,041<small>09-18</small></td><td class="z">0</td><td>470<small>10-01</small></td><td class="z">0</td><td>144<small>10-01</small></td><td class="na">–</td><td>425</td><td>422</td><td>585</td></tr>
+      <tr><td>COLO4</td><td>911<small>09-23</small></td><td>0</td><td>269<small>09-04</small></td><td>28</td><td>1,037<small>09-18</small></td><td class="z">0</td><td>439<small>10-01</small></td><td class="z">0</td><td>144<small>10-01</small></td><td class="na">–</td><td>420</td><td>410</td><td>570</td></tr>
+      <tr class="grp"><td colspan="14">Electrical yards</td></tr>
+      <tr><td>EY1</td><td>1,543<small>10-01</small></td><td>312<small>09-30</small></td><td>475<small>10-01</small></td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>146</td></tr>
+      <tr><td>EY2</td><td>904<small>09-25</small></td><td>126<small>09-21</small></td><td>405<small>09-10</small></td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>116</td></tr>
+      <tr><td>EY3</td><td>869<small>09-28</small></td><td>162<small>09-25</small></td><td>407<small>09-10</small></td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>116</td></tr>
+      <tr><td>EY4</td><td>834<small>09-29</small></td><td>122<small>≤08-27</small></td><td>410<small>09-10</small></td><td>36</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>114</td></tr>
+      <tr class="grp"><td colspan="14">Mechanical yards</td></tr>
+      <tr><td>MY1</td><td>2,072<small>10-01</small></td><td>275<small>09-28</small></td><td>453<small>09-25</small></td><td>117</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td>80</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>135</td></tr>
+      <tr><td>MY2</td><td>2,827<small>10-01</small></td><td>198<small>10-01</small></td><td>320<small>09-04</small></td><td>30</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>78</td></tr>
+      <tr><td>MY3</td><td>2,645<small>10-01</small></td><td>216<small>09-25</small></td><td>344<small>09-04</small></td><td>115</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>62</td></tr>
+      <tr><td>MY4</td><td>2,483<small>10-01</small></td><td>172<small>09-24</small></td><td>313<small>09-08</small></td><td>40</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>74</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="legend"><span><span class="sw"></span>Design sheet exists, model has nothing</span><span>* Admin's grid block also holds COLO1 and Mech Yard 1 feeders and site telecom manholes. The newest Admin-tagged UG conduit is from 09-10.</span></div>
+</section>
+
+<section>
+  <h2>How the check works</h2>
+  <div class="grades">
+    <div class="grade"><span class="tag urgent" style="justify-self:start">Due soon</span><p>The field needs it within two weeks and the model does not have it. Raise the same day.</p></div>
+    <div class="grade"><span class="tag ask" style="justify-self:start">Ask now</span><p>Nobody has confirmed whose scope it is. Ask anyway, so the out-of-scope items are known early.</p></div>
+    <div class="grade"><span class="tag push" style="justify-self:start">Stalled at BES</span><p>It is in BES's scope but held or not started. Ask what releases it and when.</p></div>
+    <div class="grade"><span class="tag watch" style="justify-self:start">Watch</span><p>Probably fine, or already in the RFI channel. Re-checked each week.</p></div>
+  </div>
+  <div class="tests">
+    <div class="test"><span class="n">1 · Coverage</span><h3>Design sheet vs model, per area</h3><p>For each location and system with a design plan sheet, count elements in both models and flag anything empty.</p></div>
+    <div class="test"><span class="n">2 · Counts</span><h3>Drawing tags vs model families</h3><p>Count device tags on the design sheet and compare with the model. Floor boxes today; other device types as they come up.</p></div>
+    <div class="test"><span class="n">3 · Need date</span><h3>Rank by when the field needs it</h3><p>Join each gap to ARCO's lookahead (slab, foundation, install dates) and BES's priority list, so the nearest deadline is at the top.</p></div>
+    <div class="test"><span class="n">4 · Follow-through</span><h3>Answered RFIs the model never absorbed</h3><p>For answered RFIs tied to an area and system, check whether the model changed there afterwards. Flag after 10 working days with no change.</p></div>
+    <div class="test"><span class="n">5 · Field voice</span><h3>What Triad is already saying</h3><p>Search RFI and submittal text for phrases like "model only showing" and "plan vs model". A hit means someone has already noticed.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Limits</h2>
+  <div class="notes">
+    <p><strong>The design baseline is the IFP 06-29 set</strong> until the IFC electrical drawings are on ACC (Q7).</p>
+    <p><strong>The check only sees what is drawn.</strong> An expectation that exists only in conversation won't show up. The weekly RFI and field-voice sweeps catch some of those.</p>
+    <p><strong>BES's priority list is the 09-25 copy</strong> (v1.3). A newer list may already show some of these holds released.</p>
+    <p><strong>Location comes from geometry.</strong> Work-package tags and FROM/TO are checked before anything is attributed to Admin, because Admin's grid block also carries COLO1 and Mech Yard work.</p>
+  </div>
+</section>
+
+<footer>Updated 2026-10-01 by the BIM Assistant for David Campbell. Sources: live UG-Overall and AG-Overall models, IFP 06-29 design sheets, ACC answered RFIs and BES RFIs, the 6-12 week lookahead, and BES priority list v1.3 (09-25). Refreshed weekly on Mondays.</footer>
+</div>
+</body>
+</html>
