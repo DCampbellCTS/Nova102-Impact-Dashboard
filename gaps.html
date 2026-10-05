@@ -89,14 +89,14 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 <body>
 <div class="wrap">
 <header>
-  <div class="eyebrow">NOVA102 · Expectation gap check · updated 2026-10-01</div>
+  <div class="eyebrow">NOVA102 · Expectation gap check · updated 2026-10-05</div>
   <h1>What the model owes the field, and what to ask before anyone else notices</h1>
-  <p class="meta">This page compares the live UG and AG Revit models against the design sheets, answered RFIs, ARCO's lookahead and BES's own priority list. Gaps are ranked by when the field needs them. Each one ends in a question for BES, ARCO or the Design Team, and the question register below tracks what has been asked. The BIM Assistant updates it weekly; David sends the questions.</p>
+  <p class="meta">This page compares the live UG and AG Revit models against the design sheets, answered RFIs, ARCO's lookahead and BES's own priority list. Gaps are ranked by when the field needs them. Each one ends in a question for BES, ARCO or the Design Team, and the question register below tracks what has been asked. The BIM Assistant updates it weekly; David sends the questions. Items marked <b>NEW 10-05</b> changed since the 10-01 check.</p>
   <div class="strip">
-    <span class="pill"><span class="dot d-urgent"></span><b>1</b> due tomorrow</span>
-    <span class="pill"><span class="dot d-ask"></span><b>1</b> ask now: scope unknown</span>
+    <span class="pill"><span class="dot d-urgent"></span><b>1</b> past need date: confirm the pour</span>
+    <span class="pill"><span class="dot d-ask"></span><b>2</b> ask now</span>
     <span class="pill"><span class="dot d-push"></span><b>3</b> in BES scope, stalled</span>
-    <span class="pill"><span class="dot d-watch"></span><b>2</b> watch</span>
+    <span class="pill"><span class="dot d-watch"></span><b>3</b> watch</span>
   </div>
 </header>
 
@@ -105,42 +105,47 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="items">
 
     <article class="item urgent"><div class="bar"></div><div class="body">
-      <div class="ihead"><span class="tag urgent">Due 10-02</span><h3>Admin under-slab branch power and data, including the Area R floor boxes</h3><span class="loc">ADMIN · AREA R</span></div>
-      <div class="facts"><span>Field need <b>Slab on grade 10-02</b> (AD-UG-14, marked "?" by ARCO)</span><span>BES scope <b>Yes, on hold</b></span><span>Questions <b>Q1, Q2</b></span></div>
+      <div class="ihead"><span class="tag urgent">Past 10-02</span><h3>Admin under-slab branch power and data, including the Area R floor boxes</h3><span class="loc">ADMIN · AREA R</span></div>
+      <div class="facts"><span>Field need <b>Slab on grade 10-02</b> (AD-UG-14, ARCO "?"; pour not confirmed)</span><span>BES scope <b>Yes, on hold</b></span><span>Questions <b>Q1, Q2, Q8, Q9</b></span></div>
       <div class="cols">
         <div><span class="lbl">Design calls for</span><p>EP-101R carries 20 FB1 tags across the workstation clusters, and ARCO RFI #39 (answered 08-18) gives a dimensioned floor-box plan. T-368 and T-409 add the data and AV drops. ARCO RFI #22 allows direct-buried PVC under the slab, so this rough-in has to go in before the pour.</p></div>
-        <div><span class="lbl">Model has</span><p>5 floor boxes, each fed only by a short EMT stub, with no under-slab raceway and no data devices. Admin-tagged UG conduit was last added 09-10, and those packages cover only site feeders.</p></div>
-        <div><span class="lbl">BES's own status (09-25 list)</span><p>Branch conduits, Admin: 20%, on hold, "waiting for updated redlines." Homerun redlines, Admin: 90%, on hold behind the branch-circuit voltage-drop RFI (BES 22/27).</p></div>
+        <div><span class="lbl">Model has (10-05)</span><p><b>2</b> <code>FLOOR_BOX</code> instances in the synced UG central (down from 5 on 10-01), on the overhead-conduit workset with no work package. AG has none. There is no Admin under-slab raceway. The 61 conduits added in Admin's grid block since 10-01 are Mech Yard 1 feeders (MYM3, UGC.MY.M1.01), not Admin work.</p></div>
+        <div><span class="lbl">BES's own status</span><p>10-01 OH list: <i>"Admin floor boxes modeled, drawings 10%, due 10/06"</i>; Admin branch conduits 20% → 60%, still on hold. <b>NEW 10-05:</b> BES's week plan has floor-box drawings with <b>no ETA</b>. The 10/06 date has been dropped.</p></div>
       </div>
-      <div class="ask-box"><span class="lbl">Ask today</span><p>Confirm with ARCO and Triad whether the 10-02 pour stands and what Triad is roughing in from. Ask BES what releases the two holds, and whether Area R can be modeled from EP-101R and the RFI #39 plan before the pour.</p></div>
+      <div class="cols">
+        <div><span class="lbl">NEW 10-05: product not approved</span><p>Procore submittal <b>26 05 33-3 Office Floor Boxes</b> has been <i>Revise and Resubmit</i> since 08-19, with no resubmittal on file. The floor box Triad would set under the slab has no approved product or rough-in dimensions.</p></div>
+        <div><span class="lbl">Model vs. BES claim</span><p>BES reports the floor boxes as modeled, but the synced central shows 2. Either BES's work hasn't been synchronized to central, or it hasn't been done.</p></div>
+      </div>
+      <div class="ask-box"><span class="lbl">Ask today</span><p>Confirm with ARCO/Triad whether the Admin slab poured on 10-02 and what was roughed in. If it hasn't poured, ask BES to sync the floor-box model now and give a firm drawing date. Ask Triad when 26 05 33 will be resubmitted.</p></div>
     </div></article>
 
     <article class="item ask"><div class="bar"></div><div class="body">
-      <div class="ihead"><span class="tag ask">Ask now</span><h3>Admin fire alarm: nothing modeled, and not on BES's list</h3><span class="loc">ADMIN · AG</span></div>
+      <div class="ihead"><span class="tag ask">Ask now</span><h3>Admin fire alarm: nothing modeled, and BES's list now excludes it explicitly</h3><span class="loc">ADMIN · AG</span></div>
       <div class="facts"><span>Field need <b>No AG install dates yet</b> (dry-in 12-11)</span><span>BES scope <b>Unknown</b></span><span>Question <b>Q3</b></span></div>
       <div class="cols">
         <div><span class="lbl">Design calls for</span><p>FA-101Q and FA-101R fire alarm plans, the same series as the COLO sheets FA-101A to FA-101P.</p></div>
-        <div><span class="lbl">Model has</span><p>The fire alarm workset has 15,170 elements across COLO1 to COLO4, all added in the last week. Admin has none, and no fire alarm task appears on BES's priority list.</p></div>
+        <div><span class="lbl">Model has (10-05)</span><p>The fire alarm workset has 17,302 elements (15,170 on 10-01), all in COLO1 to COLO4. Admin has none: the 15 hits at Admin's grid edge are COLO1 boxes. There is no fire alarm submittal in Procore.</p></div>
+        <div><span class="lbl">BES's own status</span><p><b>NEW:</b> The 10-01 OH list adds fire alarm rows, with stand modeling at 90% and coordination at 50%, for C1 to C4 only. Admin is not listed.</p></div>
       </div>
-      <div class="ask-box"><span class="lbl">Ask BES</span><p>Who is modeling fire alarm, and is Admin included? If it is out of BES's scope, we need to know whose it is before Triad asks.</p></div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>Fire alarm is now on your list for COLO1 to COLO4 but not Admin. Is Admin fire alarm yours, and if not, whose is it?</p></div>
     </div></article>
 
-    <article class="item push"><div class="bar"></div><div class="body">
-      <div class="ihead"><span class="tag push">Stalled at BES</span><h3>Security conduit to the devices already placed</h3><span class="loc">ADMIN · COLO1–4 · AG</span></div>
-      <div class="facts"><span>Field need <b>No AG install dates yet</b></span><span>BES scope <b>Yes: 0%, to do</b></span><span>Question <b>Q4</b></span></div>
+    <article class="item ask"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag ask">Ask now</span><h3>NEW 10-05: security conduit reported at 55–65%, but none in the model</h3><span class="loc">ADMIN · COLO1–4 · AG</span></div>
+      <div class="facts"><span>Field need <b>No AG install dates yet</b> (C1-AG gate 10-12, placeholder)</span><span>BES scope <b>Yes</b></span><span>Questions <b>Q4, Q10</b></span></div>
       <div class="cols">
-        <div><span class="lbl">Design and model</span><p>TY-1xx and TY-2xx per area. Devices are in: Admin 678, COLO1 614, COLO2 458, COLO3 470, COLO4 439. Security conduit appears only in Mech Yard 1 (80 runs).</p></div>
-        <div><span class="lbl">BES's own status</span><p>"Modeling security conduits" for Admin and COLO1 to COLO4: 0%, to do. Security redlines run from 0% to 30%. BES RFI 48 (backboxes for intercoms and sounders) is still pending.</p></div>
+        <div><span class="lbl">Model has (10-05)</span><p>A new <code>16 - SECURITY CONDUITS</code> workset exists, but it has <b>0 elements</b>, and there are no conduits on <code>15 - SECURITY DEVICES</code>. Devices are placed (Admin about 700, COLO1 to COLO4 about 440 to 610 each).</p></div>
+        <div><span class="lbl">BES's own status (10-01)</span><p>New rows put security devices and conduits modeling at 55–65% and coordination at 55–60% (C1 to C4 and Admin). The older "SECURITY CONDUITS" rows for Admin and C1 to C3 still show 0%, to do, and COLO4 security conduit is in neither set. BES RFI 48 is still pending. Clarification #05 confirms duplicate camera IDs on IFP TY-207.</p></div>
       </div>
-      <div class="ask-box"><span class="lbl">Ask BES</span><p>When does security conduit start, and is RFI 48 the only thing holding it?</p></div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>Which number is right? If conduit work exists, sync it to central. Confirm COLO4 security conduit is in scope.</p></div>
     </div></article>
 
     <article class="item push"><div class="bar"></div><div class="body">
       <div class="ihead"><span class="tag push">Stalled at BES</span><h3>Lighting conduit in the COLOs, and the ARCO #69 direction</h3><span class="loc">COLO1–4 · AG</span></div>
       <div class="facts"><span>Field need <b>No AG install dates yet</b></span><span>BES scope <b>Yes, on hold</b></span><span>Question <b>Q5</b></span></div>
       <div class="cols">
-        <div><span class="lbl">Design and model</span><p>Fixtures are in (about 1,040 to 1,208 per COLO, last added around 09-18), but there is no lighting conduit in any COLO. Admin has 1,482 runs. ARCO RFI #69 (answered 09-29) calls for plenum lighting to match Building 1, with a separate override switch inside the HAC.</p></div>
-        <div><span class="lbl">BES's own status</span><p>Lighting conduits for COLO1 to COLO4: 0%, on hold, "waiting for redlines." COLO1 lighting redlines: 5%, on hold. Fixtures are marked done, with a note that they need remodeling once the submittal arrives.</p></div>
+        <div><span class="lbl">Design and model (10-05)</span><p>COLO1 to COLO4 still have 0 lighting conduit. The Admin lighting-conduit workset has 3,249 elements, and BES now shows Admin lighting conduits at 100%. ARCO #69 (answered 09-29) calls for plenum lighting to match Building 1, with a separate override switch in the HAC. Its 10-working-day follow-through clock runs out on 10-13.</p></div>
+        <div><span class="lbl">BES's own status</span><p>COLO1 to COLO4 lighting conduits: 0%, on hold for redlines (unchanged). Lighting fixture drawings: 15%, on hold. <b>NEW:</b> BES RFI 37 was re-saved 10-05 as "WIP pending lighting controls design". ARCO has opened fixture-vs-mechanical "shadow" issues in Forma (#1477, #1478, #1496, #1529–#1531).</p></div>
       </div>
       <div class="ask-box"><span class="lbl">Ask BES</span><p>Whose redlines are they waiting on, and by when? Will the ARCO #69 plenum lighting and switch be modeled?</p></div>
     </div></article>
@@ -149,22 +154,37 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <div class="ihead"><span class="tag push">Stalled at BES</span><h3>Yard and site lighting</h3><span class="loc">EY1–4 · MY1–4</span></div>
       <div class="facts"><span>Field need <b>Check lookahead</b></span><span>BES scope <b>Yes, on hold</b></span><span>Question <b>Q6</b></span></div>
       <div class="cols">
-        <div><span class="lbl">Design and model</span><p>Each yard has an EL-101EY or EL-101MY lighting plan. There are no light fixtures in the yards in either model; the UG model has 5 to 10 street-pole bases per yard.</p></div>
-        <div><span class="lbl">BES's own status</span><p>Site/EYD/MYD lighting redlines: 90%, on hold behind the same voltage-drop RFI as the Admin homeruns.</p></div>
+        <div><span class="lbl">Design and model</span><p>Each yard has an EL-101EY or EL-101MY lighting plan. Neither model has light fixtures in the yards; the UG model has 5 to 10 street-pole bases per yard.</p></div>
+        <div><span class="lbl">BES's own status</span><p>Site/EYD/MYD lighting redlines: 90%, on hold behind the voltage-drop RFI. <b>NEW:</b> The 10-01 OH list has no Elec Yard rows at all; the yards appear only as MY feeders (50% WIP).</p></div>
       </div>
-      <div class="ask-box"><span class="lbl">Ask BES</span><p>Did the BES 22 answer (filed 09-22) release the voltage-drop hold? If not, what is still missing? This one hold blocks both Admin homeruns and yard lighting.</p></div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>Did the BES 22 answer (filed 09-22) release the voltage-drop hold? If not, what is still missing? This one hold blocks both the Admin homeruns and the yard lighting.</p></div>
+    </div></article>
+
+    <article class="item push"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag push">Stalled at BES</span><h3>NEW 10-05: overhead supports and struts</h3><span class="loc">ADMIN · COLO1–4 · AG</span></div>
+      <div class="facts"><span>Field need <b>C1-AG gate 10-12</b> (placeholder)</span><span>BES scope <b>Yes: 0%, to do</b></span><span>Question <b>Q11</b></span></div>
+      <div class="cols">
+        <div><span class="lbl">Model has (10-05)</span><p>The <code>12-SUPPORT</code> workset holds 4 elements. Power and telecom tray are at 65% modeled, and none of that tray has supports.</p></div>
+        <div><span class="lbl">BES's own status</span><p>Supports and struts: 0%, changed from on hold to to do. It still waits on submittals: Procore 26 05 29-1 (Hangers and Supports) has been open since 07-27, and BES RFI 36 is unresolved.</p></div>
+      </div>
+      <div class="ask-box"><span class="lbl">Ask BES</span><p>Is the 26 05 29 submittal the only thing holding supports? What date gets supports modeled for COLO1 ahead of the 10-12 gate?</p></div>
     </div></article>
 
     <article class="item"><div class="bar"></div><div class="body">
-      <div class="ihead"><span class="tag watch">Watch</span><h3>Grounding has not moved in weeks in most areas</h3><span class="loc">UG</span></div>
-      <p>The last grounding added was COLO2 on 09-03, COLO3 and COLO4 on 09-04, Elec Yards 2 to 4 on 09-10, and Admin before 08-27. Every area has an EG-101 plan. It is probably finished, but confirm no change is pending.</p>
+      <div class="ihead"><span class="tag watch">Watch</span><h3>Grounding: Admin is moving, the rest is flat</h3><span class="loc">UG</span></div>
+      <p><b>NEW 10-05:</b> Admin grounding IFR packages GRD.ADMIN.001, GRD.Q.001 and GRD.R.001 were posted, and the model gained 6 Admin grounding elements (ADMINQ/ADMINR). COLO2 to COLO4 and all the yards are unchanged since early September. The daily run is holding four COLO1 GRD rows whose sheets dropped out (N1, N2, P1, P2).</p>
+    </div></article>
+
+    <article class="item"><div class="bar"></div><div class="body">
+      <div class="ihead"><span class="tag watch">Watch</span><h3>NEW 10-05: UG telecom conduit in COLO2 to COLO4</h3><span class="loc">COLO2–4 · UG</span></div>
+      <p>COLO2, COLO3 and COLO4 have 0 UG telecom conduit, against 64 in COLO1. BES's 10-05 week plan adds a new "Telecom devices and conduits C3–4" task, and the AG model has a new <code>19 - TELECOM DEVICES</code> workset (316 elements). The plan doesn't say whether the task is UG or Level 1, so this may be expected; ask once (Q12).</p>
     </div></article>
 
     <article class="item"><div class="bar"></div><div class="body">
       <div class="ihead"><span class="tag watch">Watch</span><h3>Model complaints already in the RFI channel</h3><span class="loc">BES RFIs</span></div>
       <ul class="ev">
+        <li><b>NEW:</b> BES RFI 34.1 (filed 10-02) re-raises the ICM conduit routing mismatch between ER-100.1 and E-602, so the 09-24 answer to RFI 34 did not settle it.</li>
         <li>BES RFI 46 (09-25): HAC racking is modeled without dedicated supports for telecom tray and busway.</li>
-        <li>BES RFI 34 (answered 09-24): ICM conduit routing on ER-100.1 disagrees with E-602.</li>
       </ul>
     </div></article>
 
@@ -173,18 +193,23 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 <section>
   <h2>Question register</h2>
-  <p class="meta">Each question is asked once. When an answer comes back, it is recorded here and the gap is re-graded. The drafts below are ready for David to send; nothing goes out automatically.</p>
+  <p class="meta">Each question is asked once. When an answer comes back, it is recorded here and the gap is re-graded. The drafts below are ready for David to send; nothing goes out automatically. On 10-05, Procore had no new RFI answers (newest RFI #70, 10-03) and nothing on ACC answers Q1–Q7.</p>
   <div class="tablewrap">
   <table class="reg">
     <thead><tr><th>#</th><th>Question</th><th>To</th><th>Gap</th><th>Needed by</th><th>Status</th></tr></thead>
     <tbody>
       <tr><td>Q1</td><td class="q">Is Admin slab on grade still 10/02 (your lookahead marks it "?")? If it is, what is Triad roughing in from under the slab in Area R: EP-101R and the RFI #39 floor-box plan directly, or a model that isn't issued yet?</td><td>ARCO, Triad</td><td>Admin under-slab</td><td>10-01</td><td><span class="status">Drafted</span></td></tr>
-      <tr><td>Q2</td><td class="q">Your priority list shows Admin branch conduits at 20% on hold for updated redlines, and Admin homerun redlines at 90% on hold for the branch voltage-drop RFI. What exactly releases each one? Can Area R floor boxes and under-slab raceway be modeled before the pour? The model has 5 floor boxes against about 19 on EP-101R.</td><td>BES</td><td>Admin under-slab</td><td>10-02</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q2</td><td class="q">Your priority list shows Admin branch conduits on hold for updated redlines, and Admin homerun redlines on hold for the branch voltage-drop RFI. What exactly releases each one? Can Area R floor boxes and under-slab raceway be modeled before the pour?</td><td>BES</td><td>Admin under-slab</td><td>10-02</td><td><span class="status">Drafted</span></td></tr>
       <tr><td>Q3</td><td class="q">FA-101Q/R show Admin fire alarm. COLO1 to COLO4 have fire alarm modeled, Admin has none, and fire alarm is not on your priority list. Is Admin fire alarm in your scope, and when will it be modeled?</td><td>BES</td><td>Admin fire alarm</td><td>Before AG IFC</td><td><span class="status">Drafted</span></td></tr>
       <tr><td>Q4</td><td class="q">Security devices are placed in Admin and COLO1 to COLO4, but security conduit is at 0% (to do). When does it start, and is BES RFI 48 the only blocker?</td><td>BES</td><td>Security conduit</td><td>Before AG IFC</td><td><span class="status">Drafted</span></td></tr>
       <tr><td>Q5</td><td class="q">COLO1 to COLO4 lighting conduits are on hold waiting for redlines. Whose redlines, and due when? Will ARCO #69 (plenum lighting to match Building 1, separate override switch in the HAC) be modeled?</td><td>BES</td><td>COLO lighting</td><td>Before AG IFC</td><td><span class="status">Drafted</span></td></tr>
       <tr><td>Q6</td><td class="q">Did the BES 22 answer (filed 09-22) release the branch voltage-drop hold on the Admin homeruns and the site/yard lighting redlines? If not, what is still needed, and from whom?</td><td>BES</td><td>Admin homeruns, yard lighting</td><td>10-02</td><td><span class="status">Drafted</span></td></tr>
       <tr><td>Q7</td><td class="q">Please issue the IFC electrical drawing set to ACC. Engineering's RFI answers point to the "latest IFC electrical drawings", but only the IFC specifications are on file.</td><td>ARCO / Design Team</td><td>All, design baseline</td><td>Open</td><td><span class="status">Drafted</span></td></tr>
+      <tr><td>Q8</td><td class="q">Your 10-01 list says the Admin floor boxes are modeled, but the synced central model has 2 (EP-101R shows about 19), and this week's plan drops the 10/06 drawing date. Can you sync the floor-box work to central today and give a firm drawing date?</td><td>BES</td><td>Admin under-slab</td><td>Now</td><td><span class="status">Drafted 10-05</span></td></tr>
+      <tr><td>Q9</td><td class="q">Office floor box submittal 26 05 33-3 has been Revise and Resubmit since 08-19. When will it be resubmitted? If the Admin slab is poured or about to be, which floor box and rough-in dimensions is the field setting?</td><td>Triad / ARCO</td><td>Admin under-slab</td><td>Now</td><td><span class="status">Drafted 10-05</span></td></tr>
+      <tr><td>Q10</td><td class="q">Your 10-01 list shows security devices and conduits modeling at 55–65%, yet "Security conduits" for Admin and C1 to C3 is still 0% to do, COLO4 isn't listed, and the central model's security conduit workset is empty. Which is right? Please sync any conduit work, and confirm COLO4 security conduit is in scope.</td><td>BES</td><td>Security conduit</td><td>Before C1-AG gate 10-12</td><td><span class="status">Drafted 10-05</span></td></tr>
+      <tr><td>Q11</td><td class="q">Supports and struts are at 0% (to do), and the model has 4 support elements. Is submittal 26 05 29 (Hangers and Supports, open since 07-27) the only blocker, and what date gets COLO1 supports modeled before the 10-12 gate?</td><td>BES (submittal: Triad)</td><td>OH supports</td><td>10-12</td><td><span class="status">Drafted 10-05</span></td></tr>
+      <tr><td>Q12</td><td class="q">Your new "Telecom devices and conduits C3–4" task: is that UG or Level 1? The UG model has no telecom conduit in COLO2 to COLO4 (COLO1 has 64). Is UG telecom needed there?</td><td>BES</td><td>COLO2–4 UG telecom</td><td>Open</td><td><span class="status">Drafted 10-05</span></td></tr>
     </tbody>
   </table>
   </div>
@@ -192,7 +217,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 <section>
   <h2>Coverage matrix</h2>
-  <p class="meta">Element counts per location on 2026-10-01. Red means the design has a plan sheet for that system and location but the model has nothing. Small text is the date the last element was added. A dash means no design sheet calls for it.</p>
+  <p class="meta">Element counts per location. UG columns are from a 2026-10-05 snapshot (99.6% of UG conduits captured), with the change since 10-01 in small text. Lighting conduit, security conduit, Admin fire alarm and floor boxes were re-checked in AG on 10-05. The other AG columns are 10-01 counts. Red means the design has a plan sheet for that system and location but the model has nothing. A dash means no design sheet calls for it.</p>
   <div class="tablewrap">
   <table>
     <thead><tr>
@@ -200,32 +225,32 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     </tr></thead>
     <tbody>
       <tr class="grp"><td colspan="14">Buildings</td></tr>
-      <tr><td>Admin</td><td>336<small>09-10*</small></td><td>374<small>site*</small></td><td>89<small>≤08-27</small></td><td>1,267<small>10-01</small></td><td>464<small>09-22</small></td><td>1,482<small>10-01</small></td><td>678<small>10-01</small></td><td class="z">0</td><td class="z">0</td><td class="z">5<small>of ~19</small></td><td>12</td><td>35</td><td>68</td></tr>
-      <tr><td>COLO1</td><td>1,458<small>09-30</small></td><td>64</td><td>334<small>09-08</small></td><td>1,411<small>10-01</small></td><td>1,208<small>09-18</small></td><td class="z">0</td><td>614<small>10-01</small></td><td class="z">0</td><td>168<small>10-01</small></td><td class="na">–</td><td>523</td><td>527</td><td>796</td></tr>
-      <tr><td>COLO2</td><td>937<small>10-01</small></td><td>0</td><td>275<small>09-03</small></td><td>327</td><td>1,040<small>09-18</small></td><td class="z">0</td><td>458<small>10-01</small></td><td class="z">0</td><td>138<small>10-01</small></td><td class="na">–</td><td>443</td><td>426</td><td>575</td></tr>
-      <tr><td>COLO3</td><td>911<small>09-24</small></td><td>0</td><td>268<small>09-04</small></td><td>4</td><td>1,041<small>09-18</small></td><td class="z">0</td><td>470<small>10-01</small></td><td class="z">0</td><td>144<small>10-01</small></td><td class="na">–</td><td>425</td><td>422</td><td>585</td></tr>
-      <tr><td>COLO4</td><td>911<small>09-23</small></td><td>0</td><td>269<small>09-04</small></td><td>28</td><td>1,037<small>09-18</small></td><td class="z">0</td><td>439<small>10-01</small></td><td class="z">0</td><td>144<small>10-01</small></td><td class="na">–</td><td>420</td><td>410</td><td>570</td></tr>
+      <tr><td>Admin</td><td>397<small>+61*</small></td><td>374<small>site*</small></td><td>91<small>+2</small></td><td>1,267</td><td>464</td><td>3,249<small>10-05</small></td><td>698<small>10-05</small></td><td class="z">0</td><td class="z">0</td><td class="z">2<small>of ~19</small></td><td>12</td><td>35</td><td>68</td></tr>
+      <tr><td>COLO1</td><td>1,424<small>−34†</small></td><td>64</td><td>340<small>+6</small></td><td>1,411</td><td>1,208</td><td class="z">0</td><td>614</td><td class="z">0</td><td>168</td><td class="na">–</td><td>523</td><td>527</td><td>796</td></tr>
+      <tr><td>COLO2</td><td>946<small>+9</small></td><td>0</td><td>275</td><td>327</td><td>1,040</td><td class="z">0</td><td>458</td><td class="z">0</td><td>138</td><td class="na">–</td><td>443</td><td>426</td><td>575</td></tr>
+      <tr><td>COLO3</td><td>984<small>+73</small></td><td>0</td><td>268</td><td>4</td><td>1,041</td><td class="z">0</td><td>470</td><td class="z">0</td><td>144</td><td class="na">–</td><td>425</td><td>422</td><td>585</td></tr>
+      <tr><td>COLO4</td><td>954<small>+43</small></td><td>0</td><td>269</td><td>28</td><td>1,037</td><td class="z">0</td><td>439</td><td class="z">0</td><td>144</td><td class="na">–</td><td>420</td><td>410</td><td>570</td></tr>
       <tr class="grp"><td colspan="14">Electrical yards</td></tr>
-      <tr><td>EY1</td><td>1,543<small>10-01</small></td><td>312<small>09-30</small></td><td>475<small>10-01</small></td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>146</td></tr>
-      <tr><td>EY2</td><td>904<small>09-25</small></td><td>126<small>09-21</small></td><td>405<small>09-10</small></td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>116</td></tr>
-      <tr><td>EY3</td><td>869<small>09-28</small></td><td>162<small>09-25</small></td><td>407<small>09-10</small></td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>116</td></tr>
-      <tr><td>EY4</td><td>834<small>09-29</small></td><td>122<small>≤08-27</small></td><td>410<small>09-10</small></td><td>36</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>114</td></tr>
+      <tr><td>EY1</td><td>1,668<small>+125</small></td><td>312</td><td>475</td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>146</td></tr>
+      <tr><td>EY2</td><td>940<small>+36</small></td><td>126</td><td>405</td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>116</td></tr>
+      <tr><td>EY3</td><td>1,107<small>+238</small></td><td>162</td><td>407</td><td>0</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>116</td></tr>
+      <tr><td>EY4</td><td>1,012<small>+178</small></td><td>122</td><td>410</td><td>36</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>114</td></tr>
       <tr class="grp"><td colspan="14">Mechanical yards</td></tr>
-      <tr><td>MY1</td><td>2,072<small>10-01</small></td><td>275<small>09-28</small></td><td>453<small>09-25</small></td><td>117</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td>80</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>135</td></tr>
-      <tr><td>MY2</td><td>2,827<small>10-01</small></td><td>198<small>10-01</small></td><td>320<small>09-04</small></td><td>30</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>78</td></tr>
-      <tr><td>MY3</td><td>2,645<small>10-01</small></td><td>216<small>09-25</small></td><td>344<small>09-04</small></td><td>115</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>62</td></tr>
-      <tr><td>MY4</td><td>2,483<small>10-01</small></td><td>172<small>09-24</small></td><td>313<small>09-08</small></td><td>40</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>74</td></tr>
+      <tr><td>MY1</td><td>2,097<small>+25</small></td><td>275</td><td>453</td><td>117</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td>0<small>10-05</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>135</td></tr>
+      <tr><td>MY2</td><td>2,913<small>+86</small></td><td>198</td><td>320</td><td>30</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>78</td></tr>
+      <tr><td>MY3</td><td>2,820<small>+175</small></td><td>216</td><td>344</td><td>115</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>62</td></tr>
+      <tr><td>MY4</td><td>2,535<small>+52</small></td><td>172</td><td>313</td><td>40</td><td class="z">0</td><td class="z">0</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td>74</td></tr>
     </tbody>
   </table>
   </div>
-  <div class="legend"><span><span class="sw"></span>Design sheet exists, model has nothing</span><span>* Admin's grid block also holds COLO1 and Mech Yard 1 feeders and site telecom manholes. The newest Admin-tagged UG conduit is from 09-10.</span></div>
+  <div class="legend"><span><span class="sw"></span>Design sheet exists, model has nothing</span><span>* Admin's grid block also holds COLO1 and Mech Yard 1 feeders and site telecom manholes. All 61 conduits added there since 10-01 are MY1 feeders. † The 10-05 UG snapshot missed 202 of 53,449 conduits, so small decreases may be capture gaps rather than deletions. Lighting conduit counts are workset element counts, not runs.</span></div>
 </section>
 
 <section>
   <h2>How the check works</h2>
   <div class="grades">
     <div class="grade"><span class="tag urgent" style="justify-self:start">Due soon</span><p>The field needs it within two weeks and the model does not have it. Raise the same day.</p></div>
-    <div class="grade"><span class="tag ask" style="justify-self:start">Ask now</span><p>Nobody has confirmed whose scope it is. Ask anyway, so the out-of-scope items are known early.</p></div>
+    <div class="grade"><span class="tag ask" style="justify-self:start">Ask now</span><p>Nobody has confirmed whose scope it is, or what BES reports doesn't match the model. Ask anyway, so it is known early.</p></div>
     <div class="grade"><span class="tag push" style="justify-self:start">Stalled at BES</span><p>It is in BES's scope but held or not started. Ask what releases it and when.</p></div>
     <div class="grade"><span class="tag watch" style="justify-self:start">Watch</span><p>Probably fine, or already in the RFI channel. Re-checked each week.</p></div>
   </div>
@@ -241,14 +266,14 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 <section>
   <h2>Limits</h2>
   <div class="notes">
-    <p><strong>The design baseline is the IFP 06-29 set</strong> until the IFC electrical drawings are on ACC (Q7).</p>
-    <p><strong>The check only sees what is drawn.</strong> An expectation that exists only in conversation won't show up. The weekly RFI and field-voice sweeps catch some of those.</p>
-    <p><strong>BES's priority list is the 09-25 copy</strong> (v1.3). A newer list may already show some of these holds released.</p>
+    <p><strong>The design baseline is the IFP 06-29 set</strong> until the IFC electrical drawings are on ACC (Q7). As of 10-05 they still aren't.</p>
+    <p><strong>The check only sees the synced central model.</strong> Work BES reports as done but hasn't synchronized shows up here as missing. That is why Q8 and Q10 ask about syncing.</p>
+    <p><strong>BES's priority list is the 10-01 OH copy</strong> (received 10-05), plus BES's 10-05 week-plan email. The OH list has no UG rows.</p>
     <p><strong>Location comes from geometry.</strong> Work-package tags and FROM/TO are checked before anything is attributed to Admin, because Admin's grid block also carries COLO1 and Mech Yard work.</p>
   </div>
 </section>
 
-<footer>Updated 2026-10-01 by the BIM Assistant for David Campbell. Sources: live UG-Overall and AG-Overall models, IFP 06-29 design sheets, ACC answered RFIs and BES RFIs, the 6-12 week lookahead, and BES priority list v1.3 (09-25). Refreshed weekly on Mondays.</footer>
+<footer>Updated 2026-10-05 by the BIM Assistant for David Campbell. Sources: live UG-Overall and AG-Overall models (synced central, reloaded 10-05), IFP 06-29 design sheets, Procore RFIs and submittals (live, 10-05), Forma issues export 10-05, ACC Docs, the 6-12 week lookahead, BES OH priority list (10-01) and BES week plan (10-05). Refreshed weekly on Mondays.</footer>
 </div>
 </body>
 </html>
