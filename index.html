@@ -928,6 +928,10 @@
           <tr><td class="tbl-note">Duplicate register rows for C3.G2 and C3.G5</td><td><span style="color:var(--good); font-weight:600;">resolved 09-17</span> &mdash; two identical rows each (503/1000, 504/1001), pre&#8209;existing; the later one retired</td></tr>
           <tr><td class="tbl-note">BIM Locations drawing labels Mech Yard 3 twice</td><td>Where Mech Yard 2 should be &mdash; drawing typo, raised 09&#8209;17, sheet not yet corrected</td></tr>
           <tr><td class="tbl-note">Models collapse the four yards into a bare EY / MY</td><td>Sheet names give EY1&#8217;s N3 and EY2&#8217;s J2 both as <span class="mono">NOVA102.EY.UG.&hellip;</span>; the register uses the location phase. Matching resolves it by sub area letter &mdash; working, but worth aligning at source.</td></tr>
+          <tr><td class="tbl-note">ARCO P6 9/30 vs field &mdash; COLO1 Mech Yard chiller banks</td><td>P6 shows <span class="mono">IND102-A20730</span> UG Chiller Duct Banks &ndash; COLO1 &ndash; Mech Yard as not started (11/23&ndash;12/15/26), but scans and ARCO&#8217;s weekly reports show the COLO1 chiller banks in place since Aug/Sep. Ask ARCO which P6 activity that work is statused against (likely Sub Slab Chiller Duct Bank <span class="mono">A36870</span>, actual 8/17&ndash;9/24). Raised 10&#8209;08.</td></tr>
+          <tr><td class="tbl-note">ARCO P6 9/30 &mdash; COLO4 yard WBS labels</td><td>COLO4 Elec/Mech Yard WBS nodes are titled EY2 / MY2 while their activities say COLO4 (copy-paste in ARCO&#8217;s P6). Mapped by activity name. Raised 10&#8209;08.</td></tr>
+          <tr><td class="tbl-note">ARCO P6 9/30 &mdash; scope with no P6 line</td><td>No P6 activity for temp power, EV charger feeds, or separate generator / distribution feeds (P6 rolls building LV into &ldquo;Sub Slab UG Branch/Grounding&rdquo;); no yard grounding-grid line. Those WPs carry a MEDIUM/blank P6 map. Raised 10&#8209;08.</td></tr>
+          <tr><td class="tbl-note">12 WORK PACKAGE tags don&#8217;t resolve to a Register WPID</td><td>&asymp;2,880 m: <span class="mono">C1M1.1, EYN23, C1.O2, UGC.C2.L1.02, ADMINQ, ADMINR, MYO2.1, M, N, O, P, GC.C1.P1.01.1</span>. Left out of the P6 crosswalk rather than guessed. Raised 10&#8209;08.</td></tr>
         </tbody>
       </table>
     </div>
@@ -944,6 +948,8 @@
     <table class="history-table">
       <thead><tr><th style="width:110px;">Date</th><th>What happened</th></tr></thead>
       <tbody>
+
+        <tr data-day="2026-10-08"><td class="date">10&#8209;08, 09:30</td><td class="desc">ARCO P6 schedule 9/30 loaded (2,846 activities). <strong>P6 Activity ID added to the WP Register (cols W&ndash;AC, 401 of 889 packages mapped) and the Coordination Schedule (col V)</strong>, plus tabs P6 Schedule (ARCO) and P6 Crosswalk (ARCO). 108 milestone / look&#8209;ahead date cells moved to P6 9/30 (old values kept in col W); lookahead install dates refreshed (39 rows); tracker shows each package&#8217;s P6 ID. Four new flags below.</td></tr>
 
         <tr data-day="2026-10-07"><td class="date">10&#8209;07, 10:30</td><td class="desc">BIM Assistant daily run (10:32, 16:45). Conduit diff 10&#8209;06 16:51&rarr;10&#8209;07 10:30: <strong>+387 / &minus;165 / 130 modified</strong> (net +222; 54,142 tracked; 759,726 ft). Register: 28 cells written on 20 rows. Written automatically: Open Items &amp; Flags and the punch list are not changed by the daily run.</td></tr>
 
