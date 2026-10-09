@@ -11,5 +11,5 @@ backend and no live data connection, so it reflects whatever was baked in at
 last publish.
 
 To publish an update: replace index.html with a new build and push to main --
-once this repo is linked to a Netlify site for continuous deployment, that push
-triggers the live redeploy automatically.
+Cloudflare redeploys https://nova102-impact.hcgbimassistant.com/ from `main` automatically.
+Hosted on Cloudflare Workers behind Cloudflare Access (HCG sign-in), deployed from `main` by Cloudflare's GitHub integration. The old Netlify site was deleted on 2026-10-09.
